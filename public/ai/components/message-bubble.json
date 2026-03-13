@@ -1,0 +1,96 @@
+{
+  "id": "message-bubble",
+  "href": "/docs/components/message-bubble",
+  "exportHref": "/ai/components/message-bubble.json",
+  "title": "Message Bubble",
+  "description": "Chat message container with sender alignment, sender metadata, and timestamp.",
+  "category": "Data Display",
+  "importName": "MessageBubble",
+  "variants": [
+    "filled",
+    "ghost"
+  ],
+  "shapes": [
+    "sharp",
+    "rounded"
+  ],
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "role",
+      "type": "'user' | 'assistant'",
+      "description": "Sender role (controls alignment)"
+    },
+    {
+      "name": "variant",
+      "type": "'filled' | 'ghost'",
+      "default": "'filled'",
+      "description": "Visual treatment"
+    },
+    {
+      "name": "shape",
+      "type": "'sharp' | 'rounded'",
+      "default": "'rounded'",
+      "description": "Border radius"
+    },
+    {
+      "name": "alignment",
+      "type": "'auto' | 'start' | 'end'",
+      "default": "'auto'",
+      "description": "Message alignment"
+    },
+    {
+      "name": "htmlContent",
+      "type": "string",
+      "description": "Pre-rendered HTML content"
+    },
+    {
+      "name": "senderName",
+      "type": "string",
+      "description": "Sender display name"
+    },
+    {
+      "name": "timestamp",
+      "type": "string",
+      "description": "Message timestamp"
+    },
+    {
+      "name": "animated",
+      "type": "boolean",
+      "default": "false",
+      "description": "Animate entry"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "description": "Message content"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "notes": [
+    "Use Message Bubble for simple sender-aligned chat messages.",
+    "Start with the /docs/messages guide if you need to understand how it relates to Message Group and Message Part."
+  ]
+}

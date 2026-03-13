@@ -1,0 +1,124 @@
+{
+  "id": "message-part",
+  "href": "/docs/components/message-part",
+  "exportHref": "/ai/components/message-part.json",
+  "title": "Message Part",
+  "description": "Standalone typed message segment with markdown, code blocks, tool activity, thinking states, errors, and optional streaming.",
+  "category": "Data Display",
+  "importName": "MessagePart",
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "kind",
+      "type": "'text' | 'tool-call' | 'tool-result' | 'thinking' | 'code-block' | 'error'",
+      "default": "'text'",
+      "description": "Segment type"
+    },
+    {
+      "name": "content",
+      "type": "string",
+      "description": "Plain text, code, or error content"
+    },
+    {
+      "name": "htmlContent",
+      "type": "string",
+      "description": "Pre-rendered HTML content"
+    },
+    {
+      "name": "markdown",
+      "type": "boolean",
+      "default": "false",
+      "description": "Render text content as markdown"
+    },
+    {
+      "name": "toolName",
+      "type": "string",
+      "description": "Tool or function name for tool parts"
+    },
+    {
+      "name": "toolArguments",
+      "type": "string",
+      "description": "Serialized tool input for tool-call parts"
+    },
+    {
+      "name": "toolStatus",
+      "type": "'pending' | 'success' | 'error'",
+      "description": "Tool execution status"
+    },
+    {
+      "name": "thinkingLabel",
+      "type": "string",
+      "description": "Label for thinking state"
+    },
+    {
+      "name": "completed",
+      "type": "boolean",
+      "default": "false",
+      "description": "Mark a thinking state as completed"
+    },
+    {
+      "name": "language",
+      "type": "string",
+      "description": "Code language hint for code-block parts"
+    },
+    {
+      "name": "filename",
+      "type": "string",
+      "description": "Filename shown in the code block header"
+    },
+    {
+      "name": "connection",
+      "type": "'standalone' | 'first' | 'middle' | 'last'",
+      "default": "'standalone'",
+      "description": "Connected-card position when composing parts manually"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Segment size"
+    },
+    {
+      "name": "stream",
+      "type": "boolean",
+      "default": "false",
+      "description": "Enable streaming mode"
+    },
+    {
+      "name": "onStreamEnd",
+      "type": "(e: CustomEvent) => void",
+      "description": "Called after the final sanitizing render pass completes"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "notes": [
+    "Message Part can now be used directly for text, code blocks, tool calls, tool results, thinking, and errors.",
+    "Standalone Message Part uses camelCase props like toolName, toolStatus, and thinkingLabel.",
+    "Start with the /docs/messages guide before using Message Part directly in a larger conversation layout.",
+    "Supports streaming markdown rendering via ref methods (startStream, appendTokens, endStream).",
+    "Use it as the in-flight surface for streaming or for a single standalone segment, not as a replacement for an entire grouped assistant turn.",
+    "Use Message Group when one assistant turn contains several connected parts; use Message Part when one segment should stand alone."
+  ]
+}

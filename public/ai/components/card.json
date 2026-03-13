@@ -1,0 +1,93 @@
+{
+  "id": "card",
+  "href": "/docs/components/card",
+  "exportHref": "/ai/components/card.json",
+  "title": "Card",
+  "description": "Surface container with header, body, and footer slots. Renders as <article> in Shadow DOM.",
+  "category": "Layout",
+  "importName": "Card",
+  "variants": [
+    "elevated",
+    "outlined",
+    "filled"
+  ],
+  "shapes": [
+    "sharp",
+    "rounded",
+    "soft"
+  ],
+  "parts": [
+    "base",
+    "header",
+    "body",
+    "footer"
+  ],
+  "props": [
+    {
+      "name": "variant",
+      "type": "'elevated' | 'outlined' | 'filled'",
+      "default": "'elevated'",
+      "description": "Visual treatment"
+    },
+    {
+      "name": "shape",
+      "type": "'sharp' | 'rounded' | 'soft'",
+      "default": "'rounded'",
+      "description": "Border radius"
+    },
+    {
+      "name": "clickable",
+      "type": "boolean",
+      "default": "false",
+      "description": "Add hover/focus states"
+    },
+    {
+      "name": "header",
+      "type": "ReactNode",
+      "description": "Header slot"
+    },
+    {
+      "name": "footer",
+      "type": "ReactNode",
+      "description": "Footer slot"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "description": "Body content"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "events": [
+    {
+      "name": "onClick",
+      "detail": "ClickDetail",
+      "description": "Fires when clickable and clicked"
+    }
+  ],
+  "notes": [
+    "elevated uses --color-surface-raised + shadow.",
+    "outlined uses --color-surface + --color-border.",
+    "filled uses --color-surface-raised with no border."
+  ]
+}

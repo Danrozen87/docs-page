@@ -1,0 +1,67 @@
+{
+  "id": "avatar",
+  "href": "/docs/components/avatar",
+  "exportHref": "/ai/components/avatar.json",
+  "title": "Avatar",
+  "description": "User or entity representation with image or initials fallback.",
+  "category": "Layout",
+  "importName": "Avatar",
+  "shapes": [
+    "circle",
+    "rounded"
+  ],
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "description": "Accessible alt text"
+    },
+    {
+      "name": "image",
+      "type": "string",
+      "description": "Image URL"
+    },
+    {
+      "name": "initials",
+      "type": "string",
+      "description": "Initials when no image"
+    },
+    {
+      "name": "shape",
+      "type": "'circle' | 'rounded'",
+      "default": "'circle'",
+      "description": "Border radius"
+    },
+    {
+      "name": "clickable",
+      "type": "boolean",
+      "default": "false",
+      "description": "Add interactive states"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ]
+}

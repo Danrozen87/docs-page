@@ -1,0 +1,66 @@
+{
+  "id": "activity-group",
+  "href": "/docs/components/activity-group",
+  "exportHref": "/ai/components/activity-group.json",
+  "title": "Activity Group",
+  "description": "Grouped activity feed with expandable entries and status indicators.",
+  "category": "Data Display",
+  "importName": "ActivityGroup",
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "status",
+      "type": "string",
+      "description": "Group status indicator"
+    },
+    {
+      "name": "summary",
+      "type": "string",
+      "description": "Summary text when collapsed"
+    },
+    {
+      "name": "action",
+      "type": "string",
+      "description": "Action button label"
+    },
+    {
+      "name": "expanded",
+      "type": "boolean",
+      "default": "false",
+      "description": "Expanded state"
+    },
+    {
+      "name": "border",
+      "type": "string",
+      "description": "Border style"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "notes": [
+    "Use Activity Group for operational or tool-driven updates around a conversation, not as a replacement for Message Bubble.",
+    "Start with the /docs/messages guide if you are designing an assistant or agent interface.",
+    "In the current React wrapper, status is still passed explicitly even though the broader message timeline model can derive it upstream."
+  ]
+}

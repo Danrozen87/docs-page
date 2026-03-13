@@ -1,0 +1,89 @@
+{
+  "id": "fab",
+  "href": "/docs/components/fab",
+  "exportHref": "/ai/components/fab.json",
+  "title": "FAB",
+  "description": "Floating Action Button for primary mobile actions. Supports icon-only and extended (icon + label) modes.",
+  "category": "Actions",
+  "importName": "Fab",
+  "variants": [
+    "filled",
+    "outline",
+    "ghost"
+  ],
+  "shapes": [
+    "rounded",
+    "pill"
+  ],
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "icon",
+      "type": "string",
+      "required": true,
+      "description": "Lucide icon name"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "description": "Extended FAB label text"
+    },
+    {
+      "name": "ariaLabel",
+      "type": "string",
+      "description": "Accessible label (required when no label)"
+    },
+    {
+      "name": "variant",
+      "type": "'filled' | 'outline' | 'ghost'",
+      "default": "'filled'",
+      "description": "Visual treatment"
+    },
+    {
+      "name": "intent",
+      "type": "'neutral' | 'primary' | 'info' | 'success' | 'warning' | 'danger'",
+      "default": "'primary'",
+      "description": "Semantic color"
+    },
+    {
+      "name": "shape",
+      "type": "'rounded' | 'pill'",
+      "default": "'rounded'",
+      "description": "Border radius"
+    },
+    {
+      "name": "size",
+      "type": "'sm' | 'md' | 'lg'",
+      "default": "'md'",
+      "description": "40px / 56px / 96px"
+    },
+    {
+      "name": "hasPopup",
+      "type": "boolean",
+      "description": "ARIA: has associated popup"
+    },
+    {
+      "name": "expanded",
+      "type": "boolean",
+      "description": "ARIA: popup is expanded"
+    },
+    {
+      "name": "controls",
+      "type": "string",
+      "description": "ARIA: ID of controlled element"
+    }
+  ],
+  "events": [
+    {
+      "name": "onClick",
+      "detail": "ClickDetail",
+      "description": "Fires on click"
+    }
+  ],
+  "notes": [
+    "Icon-only FABs require ariaLabel.",
+    "Extended FABs show icon + label side by side."
+  ]
+}

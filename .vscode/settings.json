@@ -1,0 +1,8 @@
+{
+  "json.schemas": [
+    {
+      "fileMatch": [".seam/graph.json"],
+      "url": "./.seam/graph.schema.json"
+    }
+  ]
+}

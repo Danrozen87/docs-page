@@ -1,0 +1,107 @@
+{
+  "id": "autocomplete",
+  "href": "/docs/components/autocomplete",
+  "exportHref": "/ai/components/autocomplete.json",
+  "title": "Autocomplete",
+  "description": "Combobox with built-in fuzzy filtering. Supports single/multi select with chips.",
+  "category": "Form Inputs",
+  "importName": "Autocomplete",
+  "variants": [
+    "outline",
+    "filled",
+    "ghost"
+  ],
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "description": "Input label"
+    },
+    {
+      "name": "variant",
+      "type": "'outline' | 'filled' | 'ghost'",
+      "default": "'outline'",
+      "description": "Visual treatment"
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "description": "Placeholder text"
+    },
+    {
+      "name": "mode",
+      "type": "'single' | 'multiple'",
+      "default": "'single'",
+      "description": "Single or multi-select with chips"
+    },
+    {
+      "name": "query",
+      "type": "string",
+      "description": "Current search text"
+    },
+    {
+      "name": "selected",
+      "type": "string[]",
+      "description": "Selected values (multi mode)"
+    },
+    {
+      "name": "clearable",
+      "type": "boolean",
+      "default": "false",
+      "description": "Show clear button"
+    },
+    {
+      "name": "allowCustom",
+      "type": "boolean",
+      "default": "false",
+      "description": "Allow values not in list"
+    },
+    {
+      "name": "items",
+      "type": "SelectOption[]",
+      "required": true,
+      "description": "{ value, label }"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "events": [
+    {
+      "name": "onInput",
+      "detail": "InputDetail",
+      "description": "Fires on each keystroke"
+    },
+    {
+      "name": "onChange",
+      "detail": "SelectDetail",
+      "description": "Fires on selection"
+    }
+  ],
+  "notes": [
+    "Filtering is client-side fuzzy matching on label text.",
+    "For server-side search, update items array in onInput handler."
+  ]
+}

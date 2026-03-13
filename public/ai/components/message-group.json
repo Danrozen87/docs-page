@@ -1,0 +1,69 @@
+{
+  "id": "message-group",
+  "href": "/docs/components/message-group",
+  "exportHref": "/ai/components/message-group.json",
+  "title": "Message Group",
+  "description": "Grouped sequence of message parts — text, code blocks, tool calls, and thinking indicators.",
+  "category": "Data Display",
+  "importName": "MessageGroup",
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "role",
+      "type": "'user' | 'assistant'",
+      "description": "Sender role"
+    },
+    {
+      "name": "alignment",
+      "type": "'auto' | 'start' | 'end'",
+      "default": "'auto'",
+      "description": "Message alignment"
+    },
+    {
+      "name": "senderName",
+      "type": "string",
+      "description": "Sender display name"
+    },
+    {
+      "name": "animated",
+      "type": "boolean",
+      "default": "false",
+      "description": "Animate entry"
+    },
+    {
+      "name": "parts",
+      "type": "MessageGroupPart[]",
+      "description": "Array of message segments"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "notes": [
+    "Use Message Group when one assistant turn contains multiple typed parts such as text, code, tool activity, and thinking.",
+    "For grouped assistant turns, prefer the declarative MessageGroupPart[] parts array.",
+    "MessageGroupPart currently uses snake_case keys like tool_name and thinking_label.",
+    "Treat grouped parts as the settled record of an assistant turn rather than a scratch surface for every token.",
+    "Start with the /docs/messages guide if you need the conceptual model for the message stack."
+  ]
+}

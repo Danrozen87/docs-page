@@ -1,0 +1,83 @@
+{
+  "id": "pagination",
+  "href": "/docs/components/pagination",
+  "exportHref": "/ai/components/pagination.json",
+  "title": "Pagination",
+  "description": "Navigate between pages of content.",
+  "category": "Navigation",
+  "importName": "Pagination",
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "currentPage",
+      "type": "number",
+      "required": true,
+      "description": "Active page (1-indexed)"
+    },
+    {
+      "name": "pageSize",
+      "type": "number",
+      "required": true,
+      "description": "Items per page"
+    },
+    {
+      "name": "totalItems",
+      "type": "number",
+      "required": true,
+      "description": "Total item count"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "description": "Accessible label for the nav element"
+    },
+    {
+      "name": "showInfo",
+      "type": "boolean",
+      "description": "Show \"Page X of Y\" info text"
+    },
+    {
+      "name": "showPrevNext",
+      "type": "boolean",
+      "description": "Show previous/next buttons"
+    },
+    {
+      "name": "pageSizeOptions",
+      "type": "string",
+      "description": "Comma-separated page size options"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "events": [
+    {
+      "name": "onChange",
+      "detail": "PageDetail",
+      "description": "Page changed — { page, page_size? }"
+    }
+  ],
+  "notes": [
+    "Page navigation is consumer-controlled. Listen to onChange, then update currentPage with the new page value from the event detail."
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "id": "collapsible",
+  "href": "/docs/components/collapsible",
+  "exportHref": "/ai/components/collapsible.json",
+  "title": "Collapsible",
+  "description": "Show/hide content with an animated toggle trigger.",
+  "category": "Layout",
+  "importName": "Collapsible",
+  "parts": [
+    "base",
+    "trigger",
+    "panel"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "description": "Trigger label text"
+    },
+    {
+      "name": "triggerHtml",
+      "type": "string",
+      "description": "Custom trigger as HTML string"
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "default": "false",
+      "description": "Open/closed state"
+    },
+    {
+      "name": "icon",
+      "type": "string",
+      "description": "Lucide icon name for trigger"
+    },
+    {
+      "name": "noIcon",
+      "type": "boolean",
+      "default": "false",
+      "description": "Hide the trigger icon"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": "false",
+      "description": "Disabled state"
+    },
+    {
+      "name": "trigger",
+      "type": "ReactNode",
+      "description": "Custom trigger as React slot"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "description": "Collapsible content"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "events": [
+    {
+      "name": "onChange",
+      "detail": "CollapsibleDetail",
+      "description": "Toggled — { open: boolean }"
+    }
+  ]
+}

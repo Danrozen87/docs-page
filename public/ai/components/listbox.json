@@ -1,0 +1,54 @@
+{
+  "id": "listbox",
+  "href": "/docs/components/listbox",
+  "exportHref": "/ai/components/listbox.json",
+  "title": "Listbox",
+  "description": "Scrollable selectable option list with keyboard navigation.",
+  "category": "Navigation",
+  "importName": "Listbox",
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "description": "Accessible list label"
+    },
+    {
+      "name": "items",
+      "type": "SelectOption[]",
+      "required": true,
+      "description": "{ value, label, icon? }"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "events": [
+    {
+      "name": "onChange",
+      "detail": "SelectDetail",
+      "description": "Item selected — { value: string }"
+    }
+  ]
+}

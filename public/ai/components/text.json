@@ -1,0 +1,115 @@
+{
+  "id": "text",
+  "href": "/docs/components/text",
+  "exportHref": "/ai/components/text.json",
+  "title": "Text",
+  "description": "Semantic typography primitive with role-based sizing, alignment, color, truncation, and line clamping. Renders the correct HTML element via WASM.",
+  "category": "Layout",
+  "importName": "Text",
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "textRole",
+      "type": "'display' | 'h1' | 'h2' | 'h3' | 'label-lg' | 'label-md' | 'label-sm' | 'body-lg' | 'body-md' | 'body-sm' | 'overline' | 'caption' | 'code'",
+      "default": "'body-md'",
+      "description": "Typography role — controls font family, size, weight, and line height"
+    },
+    {
+      "name": "align",
+      "type": "'start' | 'center' | 'end'",
+      "description": "Text alignment"
+    },
+    {
+      "name": "color",
+      "type": "'primary' | 'inverse' | 'muted'",
+      "description": "Semantic color override"
+    },
+    {
+      "name": "muted",
+      "type": "boolean",
+      "default": "false",
+      "description": "Apply muted text color"
+    },
+    {
+      "name": "strong",
+      "type": "boolean",
+      "default": "false",
+      "description": "Bold weight"
+    },
+    {
+      "name": "italic",
+      "type": "boolean",
+      "default": "false",
+      "description": "Italic style"
+    },
+    {
+      "name": "underline",
+      "type": "boolean",
+      "default": "false",
+      "description": "Underline decoration"
+    },
+    {
+      "name": "underlineStrong",
+      "type": "boolean",
+      "default": "false",
+      "description": "Thick underline decoration"
+    },
+    {
+      "name": "truncate",
+      "type": "boolean",
+      "default": "false",
+      "description": "Single-line truncation with ellipsis"
+    },
+    {
+      "name": "lineClamp",
+      "type": "number",
+      "description": "Multi-line clamp (e.g. 2 = max 2 lines with ellipsis)"
+    },
+    {
+      "name": "balance",
+      "type": "boolean",
+      "default": "false",
+      "description": "CSS text-wrap: balance for even line lengths"
+    },
+    {
+      "name": "prose",
+      "type": "boolean",
+      "default": "false",
+      "description": "Enable prose typography (margins, spacing for long-form content)"
+    },
+    {
+      "name": "elementAs",
+      "type": "string",
+      "description": "Override rendered HTML element (e.g. \"span\", \"label\", \"p\")"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "description": "Text content"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "notes": [
+    "display role uses --font-display (Instrument Serif); all others use --font-sans (Inter Variable).",
+    "code role uses --font-mono (JetBrains Mono).",
+    "The host element is display: contents — it does not create a box in the layout.",
+    "Use elementAs to override the rendered HTML tag when the default semantic element does not fit.",
+    "balance applies CSS text-wrap: balance — best for headings and short paragraphs."
+  ]
+}

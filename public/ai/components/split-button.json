@@ -1,0 +1,129 @@
+{
+  "id": "split-button",
+  "href": "/docs/components/split-button",
+  "exportHref": "/ai/components/split-button.json",
+  "title": "Split Button",
+  "description": "Primary action with dropdown alternatives. The main button performs the default action; the chevron opens a secondary menu.",
+  "category": "Actions",
+  "importName": "SplitButton",
+  "variants": [
+    "filled",
+    "outline",
+    "ghost"
+  ],
+  "shapes": [
+    "sharp",
+    "rounded",
+    "pill"
+  ],
+  "intents": [
+    "neutral",
+    "primary",
+    "info",
+    "success",
+    "warning",
+    "danger"
+  ],
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "Unique identifier"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "description": "Primary button label"
+    },
+    {
+      "name": "variant",
+      "type": "'filled' | 'outline' | 'ghost'",
+      "default": "'filled'",
+      "description": "Visual treatment"
+    },
+    {
+      "name": "intent",
+      "type": "'neutral' | 'primary' | 'info' | 'success' | 'warning' | 'danger'",
+      "default": "'neutral'",
+      "description": "Semantic color"
+    },
+    {
+      "name": "shape",
+      "type": "'sharp' | 'rounded' | 'pill'",
+      "default": "'rounded'",
+      "description": "Border radius"
+    },
+    {
+      "name": "iconLeading",
+      "type": "string",
+      "description": "Icon before label"
+    },
+    {
+      "name": "triggerLabel",
+      "type": "string",
+      "description": "Accessible label for dropdown trigger"
+    },
+    {
+      "name": "entries",
+      "type": "SplitMenuEntry[]",
+      "required": true,
+      "description": "{ type, id, label, icon?, intent?, disabled? }"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": "false",
+      "description": "Disable entire component"
+    },
+    {
+      "name": "primaryDisabled",
+      "type": "boolean",
+      "default": "false",
+      "description": "Disable only primary button"
+    },
+    {
+      "name": "triggerDisabled",
+      "type": "boolean",
+      "default": "false",
+      "description": "Disable only dropdown trigger"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "events": [
+    {
+      "name": "onClick",
+      "detail": "ClickDetail",
+      "description": "Primary button click"
+    },
+    {
+      "name": "onAction",
+      "detail": "MenuActionDetail",
+      "description": "Menu item selected — { id, label? }"
+    }
+  ]
+}

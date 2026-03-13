@@ -1,0 +1,110 @@
+{
+  "id": "chat-input",
+  "href": "/docs/components/chat-input",
+  "exportHref": "/ai/components/chat-input.json",
+  "title": "Chat Input",
+  "description": "Multi-line text area optimized for chat message composition. Auto-grows with content.",
+  "category": "Form Inputs",
+  "importName": "ChatInput",
+  "shapes": [
+    "sharp",
+    "rounded",
+    "pill"
+  ],
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "description": "Accessible label"
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "description": "Placeholder text"
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "description": "Controlled value"
+    },
+    {
+      "name": "shape",
+      "type": "'sharp' | 'rounded' | 'pill'",
+      "default": "'rounded'",
+      "description": "Border radius"
+    },
+    {
+      "name": "maxRows",
+      "type": "number",
+      "default": "0",
+      "description": "Maximum visible rows (0 = unlimited)"
+    },
+    {
+      "name": "showActionButton",
+      "type": "boolean",
+      "default": "false",
+      "description": "Show secondary action button"
+    },
+    {
+      "name": "actionLabel",
+      "type": "string",
+      "description": "Label for action button"
+    },
+    {
+      "name": "submitLabel",
+      "type": "string",
+      "description": "Label for submit button"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": "false",
+      "description": "Disabled state"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "events": [
+    {
+      "name": "onFocus",
+      "detail": "FocusDetail",
+      "description": "Input gains focus"
+    },
+    {
+      "name": "onBlur",
+      "detail": "FocusDetail",
+      "description": "Input loses focus"
+    },
+    {
+      "name": "onKeydown",
+      "detail": "KeyboardDetail",
+      "description": "Key pressed"
+    }
+  ],
+  "notes": [
+    "Form-associated — participates in native <form> submission via ElementInternals.",
+    "Ref exposes focus() method."
+  ]
+}

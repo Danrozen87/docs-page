@@ -1,0 +1,54 @@
+{
+  "id": "breadcrumb",
+  "href": "/docs/components/breadcrumb",
+  "exportHref": "/ai/components/breadcrumb.json",
+  "title": "Breadcrumb",
+  "description": "Hierarchical navigation trail showing the current page location.",
+  "category": "Navigation",
+  "importName": "Breadcrumb",
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "navLabel",
+      "type": "string",
+      "required": true,
+      "description": "Accessible nav label"
+    },
+    {
+      "name": "items",
+      "type": "BreadcrumbItem[]",
+      "required": true,
+      "description": "{ label, href?, current? }"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "events": [
+    {
+      "name": "onNavigate",
+      "detail": "NavigateDetail",
+      "description": "Item clicked — { href, label }"
+    }
+  ]
+}

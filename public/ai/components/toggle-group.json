@@ -1,0 +1,70 @@
+{
+  "id": "toggle-group",
+  "href": "/docs/components/toggle-group",
+  "exportHref": "/ai/components/toggle-group.json",
+  "title": "Toggle Group",
+  "description": "Single or multi-select button group. Useful for alignment, view modes, or formatting controls.",
+  "category": "Actions",
+  "importName": "ToggleGroup",
+  "variants": [
+    "outline",
+    "ghost"
+  ],
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "description": "Accessible group label"
+    },
+    {
+      "name": "mode",
+      "type": "'single' | 'multiple'",
+      "default": "'single'",
+      "description": "Selection mode"
+    },
+    {
+      "name": "variant",
+      "type": "'outline' | 'ghost'",
+      "default": "'outline'",
+      "description": "Visual treatment"
+    },
+    {
+      "name": "items",
+      "type": "ToggleItem[]",
+      "required": true,
+      "description": "{ id, label, icon?, disabled? }"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "events": [
+    {
+      "name": "onChange",
+      "detail": "ToggleDetail",
+      "description": "Fires with { pressed: string[] }"
+    }
+  ]
+}

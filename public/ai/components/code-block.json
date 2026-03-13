@@ -1,0 +1,92 @@
+{
+  "id": "code-block",
+  "href": "/docs/components/code-block",
+  "exportHref": "/ai/components/code-block.json",
+  "title": "Code Block",
+  "description": "Display syntax-highlighted code with optional filename chrome, line numbers, traffic lights, and inline copy.",
+  "category": "Data Display",
+  "importName": "CodeBlock",
+  "parts": [
+    "base",
+    "code-titlebar",
+    "code"
+  ],
+  "props": [
+    {
+      "name": "content",
+      "type": "string",
+      "required": true,
+      "description": "Code content to render"
+    },
+    {
+      "name": "language",
+      "type": "string",
+      "description": "Language hint for syntax highlighting"
+    },
+    {
+      "name": "filename",
+      "type": "string",
+      "description": "Optional filename shown in the title bar"
+    },
+    {
+      "name": "variant",
+      "type": "string",
+      "description": "Presentation mode, such as minimal"
+    },
+    {
+      "name": "shape",
+      "type": "string",
+      "description": "Container shape when supported"
+    },
+    {
+      "name": "lineNumbers",
+      "type": "boolean",
+      "default": "false",
+      "description": "Show line numbers"
+    },
+    {
+      "name": "copyButton",
+      "type": "boolean",
+      "default": "false",
+      "description": "Show copy-to-clipboard button"
+    },
+    {
+      "name": "trafficLights",
+      "type": "boolean",
+      "default": "false",
+      "description": "Show macOS-style traffic lights in the title bar"
+    },
+    {
+      "name": "slotted",
+      "type": "boolean",
+      "default": "false",
+      "description": "Render content in slotted mode"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "notes": [
+    "Use copyButton to enable built-in copy feedback with an inline checkmark.",
+    "Use trafficLights for terminal-style framing in docs and chat surfaces.",
+    "Minimal variant is useful for inline docs sections where full chrome would be too heavy."
+  ]
+}

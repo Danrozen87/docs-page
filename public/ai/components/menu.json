@@ -1,0 +1,55 @@
+{
+  "id": "menu",
+  "href": "/docs/components/menu",
+  "exportHref": "/ai/components/menu.json",
+  "title": "Menu",
+  "description": "Action list triggered by a button. Supports icons, shortcuts, separators, and danger items.",
+  "category": "Navigation",
+  "importName": "Menu",
+  "parts": [
+    "trigger",
+    "panel"
+  ],
+  "props": [
+    {
+      "name": "triggerLabel",
+      "type": "string",
+      "required": true,
+      "description": "Trigger button label"
+    },
+    {
+      "name": "entries",
+      "type": "MenuEntry[]",
+      "required": true,
+      "description": "{ type, id, label, icon?, shortcut?, danger?, disabled? }"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "events": [
+    {
+      "name": "onAction",
+      "detail": "MenuActionDetail",
+      "description": "Item selected — { id, label? }"
+    }
+  ]
+}

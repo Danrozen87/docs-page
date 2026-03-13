@@ -1,0 +1,75 @@
+{
+  "id": "accordion",
+  "href": "/docs/components/accordion",
+  "exportHref": "/ai/components/accordion.json",
+  "title": "Accordion",
+  "description": "Expandable content sections. Supports single or multiple expanded panels.",
+  "category": "Navigation",
+  "importName": "Accordion",
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "description": "Accessible accordion label"
+    },
+    {
+      "name": "mode",
+      "type": "'single' | 'multiple'",
+      "default": "'single'",
+      "description": "How many panels can be open"
+    },
+    {
+      "name": "headingLevel",
+      "type": "'h2' | 'h3' | 'h4' | 'h5' | 'h6'",
+      "default": "'h3'",
+      "description": "Heading level for triggers"
+    },
+    {
+      "name": "defaultExpanded",
+      "type": "string[]",
+      "description": "Initially expanded panel IDs"
+    },
+    {
+      "name": "items",
+      "type": "AccordionItem[]",
+      "required": true,
+      "description": "{ id, trigger_label, panel_content (HTML string) }"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "events": [
+    {
+      "name": "onChange",
+      "detail": "AccordionDetail",
+      "description": "Expanded panels changed — { expanded: string[] }"
+    }
+  ],
+  "notes": [
+    "Panel content is an HTML string, not JSX.",
+    "Chevron rotation is handled by WASM — direction updates on interaction."
+  ]
+}

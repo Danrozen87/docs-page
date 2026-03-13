@@ -1,0 +1,133 @@
+{
+  "id": "search-bar",
+  "href": "/docs/components/search-bar",
+  "exportHref": "/ai/components/search-bar.json",
+  "title": "Search Bar",
+  "description": "Search input with clear button, keyboard shortcut hint, and optional shimmer animation.",
+  "category": "Form Inputs",
+  "importName": "SearchBar",
+  "variants": [
+    "outline",
+    "filled",
+    "ghost"
+  ],
+  "shapes": [
+    "sharp",
+    "rounded",
+    "pill"
+  ],
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "description": "Accessible label"
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "description": "Placeholder text"
+    },
+    {
+      "name": "variant",
+      "type": "'outline' | 'filled' | 'ghost'",
+      "default": "'outline'",
+      "description": "Visual treatment"
+    },
+    {
+      "name": "shape",
+      "type": "'sharp' | 'rounded' | 'pill'",
+      "default": "'rounded'",
+      "description": "Border radius"
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "description": "Controlled value"
+    },
+    {
+      "name": "debounceMs",
+      "type": "number",
+      "default": "0",
+      "description": "Debounce delay in ms"
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "default": "false",
+      "description": "Show loading state"
+    },
+    {
+      "name": "shortcut",
+      "type": "string",
+      "description": "Keyboard shortcut hint (e.g. \"Cmd+K\")"
+    },
+    {
+      "name": "expandable",
+      "type": "boolean",
+      "default": "false",
+      "description": "Collapse to icon, expand on focus"
+    },
+    {
+      "name": "shimmer",
+      "type": "boolean",
+      "default": "false",
+      "description": "Shimmer animation on the border"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": "false",
+      "description": "Disabled state"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "Form field name"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "events": [
+    {
+      "name": "onFocus",
+      "detail": "FocusDetail",
+      "description": "Input gains focus"
+    },
+    {
+      "name": "onBlur",
+      "detail": "FocusDetail",
+      "description": "Input loses focus"
+    },
+    {
+      "name": "onKeydown",
+      "detail": "KeyboardDetail",
+      "description": "Key pressed"
+    }
+  ],
+  "notes": [
+    "Form-associated — participates in native <form> submission.",
+    "Ref exposes focus() and clear() methods."
+  ]
+}

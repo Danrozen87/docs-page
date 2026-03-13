@@ -1,0 +1,4540 @@
+{
+  "generatedAt": "2026-03-13T13:17:27.751Z",
+  "name": "Collet Docs",
+  "version": "0.2.2",
+  "repoUrl": "https://github.com/Danrozen87/collet",
+  "totalComponentCount": 49,
+  "guides": [
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "href": "/docs/introduction",
+      "description": "Collet is a zero-hydration web UI component library with 49 accessible components compiled to WebAssembly and delivered as Custom Elements.",
+      "searchTerms": [
+        "zero hydration",
+        "custom elements",
+        "wasm",
+        "ai development"
+      ]
+    },
+    {
+      "id": "installation",
+      "title": "Installation",
+      "href": "/docs/installation",
+      "description": "Install @colletdev/core and the wrapper package for your framework.",
+      "searchTerms": [
+        "npm install",
+        "tarballs",
+        "framework wrappers",
+        "@colletdev/docs"
+      ]
+    },
+    {
+      "id": "usage",
+      "title": "Usage",
+      "href": "/docs/usage",
+      "description": "Render first, initialize Collet lazily, and understand startup, selective registration, and runtime loading behavior.",
+      "searchTerms": [
+        "init",
+        "lazy loading",
+        "selective registration",
+        "bundle size",
+        "preload false",
+        "render first"
+      ]
+    },
+    {
+      "id": "seam",
+      "title": "SEAM Demo",
+      "href": "/docs/seam",
+      "description": "Repo-local proof of concept for ambient session, file, and task-triggered context pings tied to real Collet docs invariants.",
+      "searchTerms": [
+        "seam",
+        "ambient context",
+        "ai triggers",
+        "file context",
+        "task context",
+        "writer",
+        "reader"
+      ]
+    },
+    {
+      "id": "messages",
+      "title": "Messages",
+      "href": "/docs/messages",
+      "description": "Understand timeline-oriented message composition with Message Bubble, Message Group, Message Part, Activity Group, and Code Block.",
+      "group": "Data Display",
+      "searchTerms": [
+        "chat ui",
+        "message bubble",
+        "message group",
+        "message part",
+        "activity group",
+        "agent ui",
+        "timeline",
+        "tool calls",
+        "streaming"
+      ]
+    },
+    {
+      "id": "conventions",
+      "title": "Conventions",
+      "href": "/docs/conventions",
+      "description": "Shared vocabulary and authoring conventions for readable Collet code.",
+      "searchTerms": [
+        "variant",
+        "intent",
+        "shape",
+        "size",
+        "tokens",
+        "forms"
+      ]
+    },
+    {
+      "id": "migrating-from-shadcn-ui",
+      "title": "Migrating from shadcn/ui",
+      "href": "/docs/migrating-from-shadcn-ui",
+      "description": "Map shadcn/ui and underlying Radix patterns to Collet’s typed component layer, tokens, and lower-context workflow.",
+      "searchTerms": [
+        "shadcn",
+        "radix",
+        "migration",
+        "tailwind",
+        "copied components",
+        "components/ui"
+      ]
+    },
+    {
+      "id": "theming",
+      "title": "Theming",
+      "href": "/docs/theming",
+      "description": "Theme Collet with CSS custom properties, dark-mode tokens, and ::part() selectors.",
+      "searchTerms": [
+        "design tokens",
+        "css variables",
+        "parts",
+        "theme",
+        "dark mode",
+        "data-theme"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "title": "Layout",
+      "ids": [
+        "card",
+        "text",
+        "sidebar",
+        "collapsible",
+        "avatar",
+        "scrollbar",
+        "carousel"
+      ]
+    },
+    {
+      "title": "Actions",
+      "ids": [
+        "button",
+        "badge",
+        "toggle-group",
+        "split-button",
+        "fab",
+        "speed-dial"
+      ]
+    },
+    {
+      "title": "Form Inputs",
+      "ids": [
+        "text-input",
+        "select",
+        "autocomplete",
+        "checkbox",
+        "switch",
+        "radio-group",
+        "slider",
+        "chat-input",
+        "date-picker",
+        "search-bar",
+        "file-upload"
+      ]
+    },
+    {
+      "title": "Navigation",
+      "ids": [
+        "tabs",
+        "accordion",
+        "breadcrumb",
+        "menu",
+        "pagination",
+        "table",
+        "listbox",
+        "stepper",
+        "profile-menu"
+      ]
+    },
+    {
+      "title": "Feedback",
+      "ids": [
+        "alert",
+        "toast",
+        "progress",
+        "spinner",
+        "skeleton",
+        "thinking"
+      ]
+    },
+    {
+      "title": "Overlays",
+      "ids": [
+        "dialog",
+        "drawer",
+        "popover",
+        "tooltip",
+        "backdrop"
+      ]
+    },
+    {
+      "title": "Data Display",
+      "ids": [
+        "message-bubble",
+        "message-group",
+        "message-part",
+        "activity-group",
+        "code-block"
+      ]
+    }
+  ],
+  "components": [
+    {
+      "id": "card",
+      "href": "/docs/components/card",
+      "exportHref": "/ai/components/card.json",
+      "title": "Card",
+      "description": "Surface container with header, body, and footer slots. Renders as <article> in Shadow DOM.",
+      "category": "Layout",
+      "importName": "Card",
+      "variants": [
+        "elevated",
+        "outlined",
+        "filled"
+      ],
+      "shapes": [
+        "sharp",
+        "rounded",
+        "soft"
+      ],
+      "parts": [
+        "base",
+        "header",
+        "body",
+        "footer"
+      ],
+      "props": [
+        {
+          "name": "variant",
+          "type": "'elevated' | 'outlined' | 'filled'",
+          "default": "'elevated'",
+          "description": "Visual treatment"
+        },
+        {
+          "name": "shape",
+          "type": "'sharp' | 'rounded' | 'soft'",
+          "default": "'rounded'",
+          "description": "Border radius"
+        },
+        {
+          "name": "clickable",
+          "type": "boolean",
+          "default": "false",
+          "description": "Add hover/focus states"
+        },
+        {
+          "name": "header",
+          "type": "ReactNode",
+          "description": "Header slot"
+        },
+        {
+          "name": "footer",
+          "type": "ReactNode",
+          "description": "Footer slot"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "description": "Body content"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onClick",
+          "detail": "ClickDetail",
+          "description": "Fires when clickable and clicked"
+        }
+      ],
+      "notes": [
+        "elevated uses --color-surface-raised + shadow.",
+        "outlined uses --color-surface + --color-border.",
+        "filled uses --color-surface-raised with no border."
+      ]
+    },
+    {
+      "id": "text",
+      "href": "/docs/components/text",
+      "exportHref": "/ai/components/text.json",
+      "title": "Text",
+      "description": "Semantic typography primitive with role-based sizing, alignment, color, truncation, and line clamping. Renders the correct HTML element via WASM.",
+      "category": "Layout",
+      "importName": "Text",
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "textRole",
+          "type": "'display' | 'h1' | 'h2' | 'h3' | 'label-lg' | 'label-md' | 'label-sm' | 'body-lg' | 'body-md' | 'body-sm' | 'overline' | 'caption' | 'code'",
+          "default": "'body-md'",
+          "description": "Typography role — controls font family, size, weight, and line height"
+        },
+        {
+          "name": "align",
+          "type": "'start' | 'center' | 'end'",
+          "description": "Text alignment"
+        },
+        {
+          "name": "color",
+          "type": "'primary' | 'inverse' | 'muted'",
+          "description": "Semantic color override"
+        },
+        {
+          "name": "muted",
+          "type": "boolean",
+          "default": "false",
+          "description": "Apply muted text color"
+        },
+        {
+          "name": "strong",
+          "type": "boolean",
+          "default": "false",
+          "description": "Bold weight"
+        },
+        {
+          "name": "italic",
+          "type": "boolean",
+          "default": "false",
+          "description": "Italic style"
+        },
+        {
+          "name": "underline",
+          "type": "boolean",
+          "default": "false",
+          "description": "Underline decoration"
+        },
+        {
+          "name": "underlineStrong",
+          "type": "boolean",
+          "default": "false",
+          "description": "Thick underline decoration"
+        },
+        {
+          "name": "truncate",
+          "type": "boolean",
+          "default": "false",
+          "description": "Single-line truncation with ellipsis"
+        },
+        {
+          "name": "lineClamp",
+          "type": "number",
+          "description": "Multi-line clamp (e.g. 2 = max 2 lines with ellipsis)"
+        },
+        {
+          "name": "balance",
+          "type": "boolean",
+          "default": "false",
+          "description": "CSS text-wrap: balance for even line lengths"
+        },
+        {
+          "name": "prose",
+          "type": "boolean",
+          "default": "false",
+          "description": "Enable prose typography (margins, spacing for long-form content)"
+        },
+        {
+          "name": "elementAs",
+          "type": "string",
+          "description": "Override rendered HTML element (e.g. \"span\", \"label\", \"p\")"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "description": "Text content"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "notes": [
+        "display role uses --font-display (Instrument Serif); all others use --font-sans (Inter Variable).",
+        "code role uses --font-mono (JetBrains Mono).",
+        "The host element is display: contents — it does not create a box in the layout.",
+        "Use elementAs to override the rendered HTML tag when the default semantic element does not fit.",
+        "balance applies CSS text-wrap: balance — best for headings and short paragraphs."
+      ]
+    },
+    {
+      "id": "sidebar",
+      "href": "/docs/components/sidebar",
+      "exportHref": "/ai/components/sidebar.json",
+      "title": "Sidebar",
+      "description": "Persistent navigation with responsive drawer. Supports groups, icons, active states, and collapse.",
+      "category": "Layout",
+      "importName": "Sidebar",
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "Accessible nav label"
+        },
+        {
+          "name": "side",
+          "type": "'left' | 'right'",
+          "default": "'left'",
+          "description": "Sidebar position"
+        },
+        {
+          "name": "state",
+          "type": "'expanded' | 'collapsed'",
+          "default": "'expanded'",
+          "description": "Collapsed/expanded"
+        },
+        {
+          "name": "groups",
+          "type": "SidebarGroup[]",
+          "required": true,
+          "description": "{ label, items: SidebarItem[] }"
+        },
+        {
+          "name": "header",
+          "type": "ReactNode",
+          "description": "Header slot"
+        },
+        {
+          "name": "footer",
+          "type": "ReactNode",
+          "description": "Footer slot"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onNavigate",
+          "detail": "NavigateDetail",
+          "description": "Item clicked — { href, label }"
+        }
+      ]
+    },
+    {
+      "id": "collapsible",
+      "href": "/docs/components/collapsible",
+      "exportHref": "/ai/components/collapsible.json",
+      "title": "Collapsible",
+      "description": "Show/hide content with an animated toggle trigger.",
+      "category": "Layout",
+      "importName": "Collapsible",
+      "parts": [
+        "base",
+        "trigger",
+        "panel"
+      ],
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "Trigger label text"
+        },
+        {
+          "name": "triggerHtml",
+          "type": "string",
+          "description": "Custom trigger as HTML string"
+        },
+        {
+          "name": "open",
+          "type": "boolean",
+          "default": "false",
+          "description": "Open/closed state"
+        },
+        {
+          "name": "icon",
+          "type": "string",
+          "description": "Lucide icon name for trigger"
+        },
+        {
+          "name": "noIcon",
+          "type": "boolean",
+          "default": "false",
+          "description": "Hide the trigger icon"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false",
+          "description": "Disabled state"
+        },
+        {
+          "name": "trigger",
+          "type": "ReactNode",
+          "description": "Custom trigger as React slot"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "description": "Collapsible content"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onChange",
+          "detail": "CollapsibleDetail",
+          "description": "Toggled — { open: boolean }"
+        }
+      ]
+    },
+    {
+      "id": "avatar",
+      "href": "/docs/components/avatar",
+      "exportHref": "/ai/components/avatar.json",
+      "title": "Avatar",
+      "description": "User or entity representation with image or initials fallback.",
+      "category": "Layout",
+      "importName": "Avatar",
+      "shapes": [
+        "circle",
+        "rounded"
+      ],
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "Accessible alt text"
+        },
+        {
+          "name": "image",
+          "type": "string",
+          "description": "Image URL"
+        },
+        {
+          "name": "initials",
+          "type": "string",
+          "description": "Initials when no image"
+        },
+        {
+          "name": "shape",
+          "type": "'circle' | 'rounded'",
+          "default": "'circle'",
+          "description": "Border radius"
+        },
+        {
+          "name": "clickable",
+          "type": "boolean",
+          "default": "false",
+          "description": "Add interactive states"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ]
+    },
+    {
+      "id": "scrollbar",
+      "href": "/docs/components/scrollbar",
+      "exportHref": "/ai/components/scrollbar.json",
+      "title": "Scrollbar",
+      "description": "Custom styled scrollable container with visible scrollbar tracks.",
+      "category": "Layout",
+      "importName": "Scrollbar",
+      "shapes": [
+        "sharp",
+        "rounded",
+        "pill"
+      ],
+      "parts": [
+        "base",
+        "track",
+        "thumb",
+        "track-x",
+        "track-y",
+        "thumb-x",
+        "thumb-y"
+      ],
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "Accessible label for scrollable region"
+        },
+        {
+          "name": "height",
+          "type": "string",
+          "description": "Tailwind height class (e.g. \"h-48\")"
+        },
+        {
+          "name": "track",
+          "type": "'with-track' | 'floating'",
+          "default": "'floating'",
+          "description": "Track style"
+        },
+        {
+          "name": "axis",
+          "type": "'vertical' | 'horizontal' | 'both'",
+          "default": "'vertical'",
+          "description": "Scroll direction"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "description": "Scrollable content"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "notes": [
+        "The height prop accepts a Tailwind class (e.g. \"h-48\") applied inside Shadow DOM.",
+        "CSS-only fallback: thumb visible at 20% opacity before JS initializes.",
+        "JS-enhanced: precise thumb sizing, drag support, and auto-hide on idle."
+      ]
+    },
+    {
+      "id": "carousel",
+      "href": "/docs/components/carousel",
+      "exportHref": "/ai/components/carousel.json",
+      "title": "Carousel",
+      "description": "Swipeable slide gallery with indicators and navigation arrows.",
+      "category": "Layout",
+      "importName": "Carousel",
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "Accessible label"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "description": "Slide elements"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ]
+    },
+    {
+      "id": "button",
+      "href": "/docs/components/button",
+      "exportHref": "/ai/components/button.json",
+      "title": "Button",
+      "description": "Trigger actions with accessible, styled buttons. Supports text, icon-only, icon+text, toggle, and link modes.",
+      "category": "Actions",
+      "importName": "Button",
+      "variants": [
+        "filled",
+        "ghost",
+        "outline",
+        "underline",
+        "side-indicator"
+      ],
+      "shapes": [
+        "sharp",
+        "rounded",
+        "pill"
+      ],
+      "intents": [
+        "neutral",
+        "primary",
+        "info",
+        "success",
+        "warning",
+        "danger"
+      ],
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "description": "Button text content"
+        },
+        {
+          "name": "variant",
+          "type": "'filled' | 'ghost' | 'outline' | 'underline' | 'side-indicator'",
+          "default": "'filled'",
+          "description": "Visual treatment"
+        },
+        {
+          "name": "intent",
+          "type": "'neutral' | 'primary' | 'info' | 'success' | 'warning' | 'danger'",
+          "default": "'neutral'",
+          "description": "Semantic color"
+        },
+        {
+          "name": "shape",
+          "type": "'sharp' | 'rounded' | 'pill'",
+          "default": "'rounded'",
+          "description": "Border radius"
+        },
+        {
+          "name": "iconLeading",
+          "type": "string",
+          "description": "Lucide icon name before label"
+        },
+        {
+          "name": "iconTrailing",
+          "type": "string",
+          "description": "Lucide icon name after label"
+        },
+        {
+          "name": "iconOnly",
+          "type": "string",
+          "description": "Icon-only mode (requires ariaLabel)"
+        },
+        {
+          "name": "ariaLabel",
+          "type": "string",
+          "description": "Accessible label (required for iconOnly)"
+        },
+        {
+          "name": "kind",
+          "type": "'button' | 'submit' | 'toggle' | 'link'",
+          "default": "'button'",
+          "description": "Button type"
+        },
+        {
+          "name": "pressed",
+          "type": "boolean",
+          "description": "Toggle state (for kind=\"toggle\")"
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "description": "URL for kind=\"link\""
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false",
+          "description": "Disabled state"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onClick",
+          "detail": "ClickDetail",
+          "description": "Fires on click"
+        }
+      ],
+      "notes": [
+        "Icon-only buttons require ariaLabel for accessibility.",
+        "Icon names use Lucide icon set in kebab-case.",
+        "size=\"sm\" icon-only = 32×32px, size=\"md\" = 36×36px."
+      ]
+    },
+    {
+      "id": "badge",
+      "href": "/docs/components/badge",
+      "exportHref": "/ai/components/badge.json",
+      "title": "Badge",
+      "description": "Compact label for status, counts, or categories. Supports text, dot, and dismissible variants.",
+      "category": "Actions",
+      "importName": "Badge",
+      "variants": [
+        "filled",
+        "outline",
+        "ghost"
+      ],
+      "shapes": [
+        "rounded",
+        "pill"
+      ],
+      "intents": [
+        "neutral",
+        "primary",
+        "info",
+        "success",
+        "warning",
+        "danger"
+      ],
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "description": "Badge text"
+        },
+        {
+          "name": "variant",
+          "type": "'filled' | 'outline' | 'ghost'",
+          "default": "'filled'",
+          "description": "Visual treatment"
+        },
+        {
+          "name": "intent",
+          "type": "'neutral' | 'primary' | 'info' | 'success' | 'warning' | 'danger'",
+          "default": "'neutral'",
+          "description": "Semantic color"
+        },
+        {
+          "name": "shape",
+          "type": "'rounded' | 'pill'",
+          "default": "'pill'",
+          "description": "Border radius"
+        },
+        {
+          "name": "dot",
+          "type": "boolean",
+          "description": "Show status dot instead of text"
+        },
+        {
+          "name": "dismissible",
+          "type": "boolean",
+          "description": "Show dismiss button"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ]
+    },
+    {
+      "id": "toggle-group",
+      "href": "/docs/components/toggle-group",
+      "exportHref": "/ai/components/toggle-group.json",
+      "title": "Toggle Group",
+      "description": "Single or multi-select button group. Useful for alignment, view modes, or formatting controls.",
+      "category": "Actions",
+      "importName": "ToggleGroup",
+      "variants": [
+        "outline",
+        "ghost"
+      ],
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "Accessible group label"
+        },
+        {
+          "name": "mode",
+          "type": "'single' | 'multiple'",
+          "default": "'single'",
+          "description": "Selection mode"
+        },
+        {
+          "name": "variant",
+          "type": "'outline' | 'ghost'",
+          "default": "'outline'",
+          "description": "Visual treatment"
+        },
+        {
+          "name": "items",
+          "type": "ToggleItem[]",
+          "required": true,
+          "description": "{ id, label, icon?, disabled? }"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onChange",
+          "detail": "ToggleDetail",
+          "description": "Fires with { pressed: string[] }"
+        }
+      ]
+    },
+    {
+      "id": "split-button",
+      "href": "/docs/components/split-button",
+      "exportHref": "/ai/components/split-button.json",
+      "title": "Split Button",
+      "description": "Primary action with dropdown alternatives. The main button performs the default action; the chevron opens a secondary menu.",
+      "category": "Actions",
+      "importName": "SplitButton",
+      "variants": [
+        "filled",
+        "outline",
+        "ghost"
+      ],
+      "shapes": [
+        "sharp",
+        "rounded",
+        "pill"
+      ],
+      "intents": [
+        "neutral",
+        "primary",
+        "info",
+        "success",
+        "warning",
+        "danger"
+      ],
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "description": "Unique identifier"
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "Primary button label"
+        },
+        {
+          "name": "variant",
+          "type": "'filled' | 'outline' | 'ghost'",
+          "default": "'filled'",
+          "description": "Visual treatment"
+        },
+        {
+          "name": "intent",
+          "type": "'neutral' | 'primary' | 'info' | 'success' | 'warning' | 'danger'",
+          "default": "'neutral'",
+          "description": "Semantic color"
+        },
+        {
+          "name": "shape",
+          "type": "'sharp' | 'rounded' | 'pill'",
+          "default": "'rounded'",
+          "description": "Border radius"
+        },
+        {
+          "name": "iconLeading",
+          "type": "string",
+          "description": "Icon before label"
+        },
+        {
+          "name": "triggerLabel",
+          "type": "string",
+          "description": "Accessible label for dropdown trigger"
+        },
+        {
+          "name": "entries",
+          "type": "SplitMenuEntry[]",
+          "required": true,
+          "description": "{ type, id, label, icon?, intent?, disabled? }"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false",
+          "description": "Disable entire component"
+        },
+        {
+          "name": "primaryDisabled",
+          "type": "boolean",
+          "default": "false",
+          "description": "Disable only primary button"
+        },
+        {
+          "name": "triggerDisabled",
+          "type": "boolean",
+          "default": "false",
+          "description": "Disable only dropdown trigger"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onClick",
+          "detail": "ClickDetail",
+          "description": "Primary button click"
+        },
+        {
+          "name": "onAction",
+          "detail": "MenuActionDetail",
+          "description": "Menu item selected — { id, label? }"
+        }
+      ]
+    },
+    {
+      "id": "fab",
+      "href": "/docs/components/fab",
+      "exportHref": "/ai/components/fab.json",
+      "title": "FAB",
+      "description": "Floating Action Button for primary mobile actions. Supports icon-only and extended (icon + label) modes.",
+      "category": "Actions",
+      "importName": "Fab",
+      "variants": [
+        "filled",
+        "outline",
+        "ghost"
+      ],
+      "shapes": [
+        "rounded",
+        "pill"
+      ],
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "icon",
+          "type": "string",
+          "required": true,
+          "description": "Lucide icon name"
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "description": "Extended FAB label text"
+        },
+        {
+          "name": "ariaLabel",
+          "type": "string",
+          "description": "Accessible label (required when no label)"
+        },
+        {
+          "name": "variant",
+          "type": "'filled' | 'outline' | 'ghost'",
+          "default": "'filled'",
+          "description": "Visual treatment"
+        },
+        {
+          "name": "intent",
+          "type": "'neutral' | 'primary' | 'info' | 'success' | 'warning' | 'danger'",
+          "default": "'primary'",
+          "description": "Semantic color"
+        },
+        {
+          "name": "shape",
+          "type": "'rounded' | 'pill'",
+          "default": "'rounded'",
+          "description": "Border radius"
+        },
+        {
+          "name": "size",
+          "type": "'sm' | 'md' | 'lg'",
+          "default": "'md'",
+          "description": "40px / 56px / 96px"
+        },
+        {
+          "name": "hasPopup",
+          "type": "boolean",
+          "description": "ARIA: has associated popup"
+        },
+        {
+          "name": "expanded",
+          "type": "boolean",
+          "description": "ARIA: popup is expanded"
+        },
+        {
+          "name": "controls",
+          "type": "string",
+          "description": "ARIA: ID of controlled element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onClick",
+          "detail": "ClickDetail",
+          "description": "Fires on click"
+        }
+      ],
+      "notes": [
+        "Icon-only FABs require ariaLabel.",
+        "Extended FABs show icon + label side by side."
+      ]
+    },
+    {
+      "id": "speed-dial",
+      "href": "/docs/components/speed-dial",
+      "exportHref": "/ai/components/speed-dial.json",
+      "title": "Speed Dial",
+      "description": "FAB with radiating action menu. Actions fan out in a direction with staggered animation and optional backdrop.",
+      "category": "Actions",
+      "importName": "SpeedDial",
+      "variants": [
+        "filled",
+        "outline",
+        "ghost"
+      ],
+      "shapes": [
+        "rounded",
+        "pill"
+      ],
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "description": "Unique identifier"
+        },
+        {
+          "name": "icon",
+          "type": "string",
+          "required": true,
+          "description": "Trigger icon"
+        },
+        {
+          "name": "ariaLabel",
+          "type": "string",
+          "required": true,
+          "description": "Accessible label"
+        },
+        {
+          "name": "closeIcon",
+          "type": "string",
+          "description": "Icon when open (default: 45° rotation)"
+        },
+        {
+          "name": "variant",
+          "type": "'filled' | 'outline' | 'ghost'",
+          "default": "'filled'",
+          "description": "Visual treatment"
+        },
+        {
+          "name": "shape",
+          "type": "'rounded' | 'pill'",
+          "default": "'pill'",
+          "description": "Border radius"
+        },
+        {
+          "name": "size",
+          "type": "'sm' | 'md' | 'lg'",
+          "default": "'md'",
+          "description": "Trigger size"
+        },
+        {
+          "name": "direction",
+          "type": "'up' | 'down' | 'left' | 'right'",
+          "default": "'up'",
+          "description": "Action menu direction"
+        },
+        {
+          "name": "backdrop",
+          "type": "boolean",
+          "default": "true",
+          "description": "Show overlay when open"
+        },
+        {
+          "name": "tooltips",
+          "type": "boolean",
+          "default": "true",
+          "description": "Show labels alongside icons"
+        },
+        {
+          "name": "actions",
+          "type": "SpeedDialAction[]",
+          "required": true,
+          "description": "{ id, icon, label, intent?, disabled? }"
+        }
+      ],
+      "events": [
+        {
+          "name": "onAction",
+          "detail": "MenuActionDetail",
+          "description": "Action selected — { id }"
+        },
+        {
+          "name": "onChange",
+          "detail": "{ open: boolean }",
+          "description": "Open/close state changed"
+        }
+      ]
+    },
+    {
+      "id": "text-input",
+      "href": "/docs/components/text-input",
+      "exportHref": "/ai/components/text-input.json",
+      "title": "Text Input",
+      "description": "Single-line and multiline text entry with built-in validation, icons, clearable, and password toggle.",
+      "category": "Form Inputs",
+      "importName": "TextInput",
+      "variants": [
+        "outline",
+        "filled",
+        "ghost"
+      ],
+      "shapes": [
+        "sharp",
+        "rounded",
+        "pill"
+      ],
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "Input label (always visible)"
+        },
+        {
+          "name": "kind",
+          "type": "'text' | 'email' | 'password' | 'number' | 'tel' | 'url' | 'search' | 'multiline'",
+          "default": "'text'",
+          "description": "Input type"
+        },
+        {
+          "name": "variant",
+          "type": "'outline' | 'filled' | 'ghost'",
+          "default": "'outline'",
+          "description": "Visual treatment"
+        },
+        {
+          "name": "shape",
+          "type": "'sharp' | 'rounded' | 'pill'",
+          "default": "'rounded'",
+          "description": "Border radius"
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "description": "Placeholder text"
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "description": "Controlled value"
+        },
+        {
+          "name": "helperText",
+          "type": "string",
+          "description": "Hint text below input"
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "description": "Error message (shows error state)"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false",
+          "description": "Disabled state"
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "default": "false",
+          "description": "Required field"
+        },
+        {
+          "name": "clearable",
+          "type": "boolean",
+          "default": "false",
+          "description": "Show clear button when has value"
+        },
+        {
+          "name": "prefixIcon",
+          "type": "string",
+          "description": "Icon before input text"
+        },
+        {
+          "name": "suffixIcon",
+          "type": "string",
+          "description": "Icon after input text"
+        },
+        {
+          "name": "passwordToggle",
+          "type": "boolean",
+          "default": "false",
+          "description": "Show/hide password toggle (for kind=\"password\")"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "Form field name"
+        },
+        {
+          "name": "maxLength",
+          "type": "number",
+          "description": "Maximum character count"
+        },
+        {
+          "name": "rows",
+          "type": "number",
+          "default": "3",
+          "description": "Visible rows (for kind=\"multiline\")"
+        },
+        {
+          "name": "autoGrow",
+          "type": "boolean",
+          "default": "false",
+          "description": "Auto-grow height (for kind=\"multiline\")"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onInput",
+          "detail": "InputDetail",
+          "description": "Fires on each keystroke — { value: string }"
+        },
+        {
+          "name": "onChange",
+          "detail": "InputDetail",
+          "description": "Fires on blur — { value: string }"
+        }
+      ],
+      "notes": [
+        "Filled variant uses --color-secondary for background, NOT --color-surface.",
+        "Use kind=\"multiline\" for textarea behavior.",
+        "Controlled pattern: value + onInput handler."
+      ]
+    },
+    {
+      "id": "select",
+      "href": "/docs/components/select",
+      "exportHref": "/ai/components/select.json",
+      "title": "Select",
+      "description": "Dropdown selection from a list of options. Supports single/multi mode and option groups.",
+      "category": "Form Inputs",
+      "importName": "Select",
+      "variants": [
+        "outline",
+        "filled",
+        "ghost"
+      ],
+      "shapes": [
+        "sharp",
+        "rounded",
+        "pill"
+      ],
+      "parts": [
+        "base",
+        "trigger"
+      ],
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "Select label"
+        },
+        {
+          "name": "variant",
+          "type": "'outline' | 'filled' | 'ghost'",
+          "default": "'outline'",
+          "description": "Visual treatment"
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "description": "Placeholder when no selection"
+        },
+        {
+          "name": "mode",
+          "type": "'single' | 'multiple'",
+          "default": "'single'",
+          "description": "Selection mode"
+        },
+        {
+          "name": "selected",
+          "type": "string",
+          "description": "Controlled selected value"
+        },
+        {
+          "name": "items",
+          "type": "SelectOption[]",
+          "description": "{ value, label }"
+        },
+        {
+          "name": "groups",
+          "type": "OptionGroup[]",
+          "description": "{ label, options: SelectOption[] }"
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "default": "false",
+          "description": "Required field"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false",
+          "description": "Disabled state"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onChange",
+          "detail": "SelectDetail",
+          "description": "Fires on selection — { value: string }"
+        }
+      ]
+    },
+    {
+      "id": "autocomplete",
+      "href": "/docs/components/autocomplete",
+      "exportHref": "/ai/components/autocomplete.json",
+      "title": "Autocomplete",
+      "description": "Combobox with built-in fuzzy filtering. Supports single/multi select with chips.",
+      "category": "Form Inputs",
+      "importName": "Autocomplete",
+      "variants": [
+        "outline",
+        "filled",
+        "ghost"
+      ],
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "Input label"
+        },
+        {
+          "name": "variant",
+          "type": "'outline' | 'filled' | 'ghost'",
+          "default": "'outline'",
+          "description": "Visual treatment"
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "description": "Placeholder text"
+        },
+        {
+          "name": "mode",
+          "type": "'single' | 'multiple'",
+          "default": "'single'",
+          "description": "Single or multi-select with chips"
+        },
+        {
+          "name": "query",
+          "type": "string",
+          "description": "Current search text"
+        },
+        {
+          "name": "selected",
+          "type": "string[]",
+          "description": "Selected values (multi mode)"
+        },
+        {
+          "name": "clearable",
+          "type": "boolean",
+          "default": "false",
+          "description": "Show clear button"
+        },
+        {
+          "name": "allowCustom",
+          "type": "boolean",
+          "default": "false",
+          "description": "Allow values not in list"
+        },
+        {
+          "name": "items",
+          "type": "SelectOption[]",
+          "required": true,
+          "description": "{ value, label }"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onInput",
+          "detail": "InputDetail",
+          "description": "Fires on each keystroke"
+        },
+        {
+          "name": "onChange",
+          "detail": "SelectDetail",
+          "description": "Fires on selection"
+        }
+      ],
+      "notes": [
+        "Filtering is client-side fuzzy matching on label text.",
+        "For server-side search, update items array in onInput handler."
+      ]
+    },
+    {
+      "id": "checkbox",
+      "href": "/docs/components/checkbox",
+      "exportHref": "/ai/components/checkbox.json",
+      "title": "Checkbox",
+      "description": "Binary or tri-state selection control. Supports checked, unchecked, and indeterminate states.",
+      "category": "Form Inputs",
+      "importName": "Checkbox",
+      "shapes": [
+        "rounded",
+        "sharp"
+      ],
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "Checkbox label text"
+        },
+        {
+          "name": "checked",
+          "type": "'checked' | 'indeterminate' | undefined",
+          "description": "Check state (string, NOT boolean)"
+        },
+        {
+          "name": "shape",
+          "type": "'rounded' | 'sharp'",
+          "default": "'rounded'",
+          "description": "Border radius"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false",
+          "description": "Disabled state"
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "default": "false",
+          "description": "Required field"
+        },
+        {
+          "name": "helperText",
+          "type": "string",
+          "description": "Hint text below"
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "description": "Error message"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onChange",
+          "detail": "CheckedDetail",
+          "description": "Fires on toggle — { checked: boolean }"
+        }
+      ],
+      "notes": [
+        "checked is a STRING, not a boolean. Use \"checked\", \"indeterminate\", or undefined.",
+        "checked=\"\" (empty string) maps to \"checked\" — not unchecked!",
+        "For unchecked state, use checked={undefined}."
+      ]
+    },
+    {
+      "id": "switch",
+      "href": "/docs/components/switch",
+      "exportHref": "/ai/components/switch.json",
+      "title": "Switch",
+      "description": "Toggle between on and off states. Unlike Checkbox, checked is a boolean.",
+      "category": "Form Inputs",
+      "importName": "Switch",
+      "shapes": [
+        "sharp",
+        "rounded",
+        "pill"
+      ],
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "Switch label text"
+        },
+        {
+          "name": "checked",
+          "type": "boolean",
+          "default": "false",
+          "description": "On/off state (boolean)"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "Description text below label"
+        },
+        {
+          "name": "shape",
+          "type": "'sharp' | 'rounded' | 'pill'",
+          "default": "'pill'",
+          "description": "Track border radius"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false",
+          "description": "Disabled state"
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "default": "false",
+          "description": "Required field"
+        },
+        {
+          "name": "helperText",
+          "type": "string",
+          "description": "Hint text below switch"
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "description": "Error message (shows error state)"
+        },
+        {
+          "name": "unlabeled",
+          "type": "boolean",
+          "default": "false",
+          "description": "Hide visible label (label still required for ARIA)"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onInput",
+          "detail": "CheckedDetail",
+          "description": "Fires immediately on toggle — { checked: boolean }"
+        },
+        {
+          "name": "onChange",
+          "detail": "CheckedDetail",
+          "description": "Fires on toggle — { checked: boolean }"
+        },
+        {
+          "name": "onFocus",
+          "detail": "FocusDetail",
+          "description": "Switch gains focus"
+        },
+        {
+          "name": "onBlur",
+          "detail": "FocusDetail",
+          "description": "Switch loses focus"
+        },
+        {
+          "name": "onKeydown",
+          "detail": "KeyboardDetail",
+          "description": "Key pressed while focused"
+        },
+        {
+          "name": "onKeyup",
+          "detail": "KeyboardDetail",
+          "description": "Key released while focused"
+        }
+      ],
+      "notes": [
+        "Unlike Checkbox, Switch checked is a BOOLEAN.",
+        "Supports three shapes: sharp (square track), rounded, and pill (default).",
+        "Thumb slides with a CSS transition — WASM handles initial render, JS handles toggle animation."
+      ]
+    },
+    {
+      "id": "radio-group",
+      "href": "/docs/components/radio-group",
+      "exportHref": "/ai/components/radio-group.json",
+      "title": "Radio Group",
+      "description": "Single selection from a set of options. Uses fieldset/legend for proper semantics.",
+      "category": "Form Inputs",
+      "importName": "RadioGroup",
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "legend",
+          "type": "string",
+          "required": true,
+          "description": "Group legend text"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": true,
+          "description": "Form field name"
+        },
+        {
+          "name": "selected",
+          "type": "string",
+          "description": "Currently selected value"
+        },
+        {
+          "name": "options",
+          "type": "RadioOption[]",
+          "required": true,
+          "description": "{ value, label, description?, disabled? }"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onChange",
+          "detail": "SelectDetail",
+          "description": "Fires on selection — { value: string }"
+        }
+      ]
+    },
+    {
+      "id": "slider",
+      "href": "/docs/components/slider",
+      "exportHref": "/ai/components/slider.json",
+      "title": "Slider",
+      "description": "Numeric value selection along a range.",
+      "category": "Form Inputs",
+      "importName": "Slider",
+      "shapes": [
+        "sharp",
+        "rounded",
+        "pill"
+      ],
+      "intents": [
+        "neutral",
+        "primary",
+        "info",
+        "success",
+        "warning",
+        "danger"
+      ],
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "Slider label"
+        },
+        {
+          "name": "min",
+          "type": "number",
+          "default": "0",
+          "description": "Minimum value"
+        },
+        {
+          "name": "max",
+          "type": "number",
+          "default": "100",
+          "description": "Maximum value"
+        },
+        {
+          "name": "step",
+          "type": "number",
+          "default": "1",
+          "description": "Step increment"
+        },
+        {
+          "name": "value",
+          "type": "number",
+          "default": "50",
+          "description": "Current value"
+        },
+        {
+          "name": "showValue",
+          "type": "boolean",
+          "default": "false",
+          "description": "Display current value"
+        },
+        {
+          "name": "orientation",
+          "type": "'horizontal' | 'vertical'",
+          "default": "'horizontal'",
+          "description": "Slider orientation"
+        },
+        {
+          "name": "intent",
+          "type": "'neutral' | 'primary' | 'info' | 'success' | 'warning' | 'danger'",
+          "default": "'primary'",
+          "description": "Track fill color"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onInput",
+          "detail": "SliderDetail",
+          "description": "Fires continuously while dragging — { value: number }"
+        },
+        {
+          "name": "onChange",
+          "detail": "SliderDetail",
+          "description": "Fires on release — { value: number }"
+        }
+      ]
+    },
+    {
+      "id": "chat-input",
+      "href": "/docs/components/chat-input",
+      "exportHref": "/ai/components/chat-input.json",
+      "title": "Chat Input",
+      "description": "Multi-line text area optimized for chat message composition. Auto-grows with content.",
+      "category": "Form Inputs",
+      "importName": "ChatInput",
+      "shapes": [
+        "sharp",
+        "rounded",
+        "pill"
+      ],
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "description": "Accessible label"
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "description": "Placeholder text"
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "description": "Controlled value"
+        },
+        {
+          "name": "shape",
+          "type": "'sharp' | 'rounded' | 'pill'",
+          "default": "'rounded'",
+          "description": "Border radius"
+        },
+        {
+          "name": "maxRows",
+          "type": "number",
+          "default": "0",
+          "description": "Maximum visible rows (0 = unlimited)"
+        },
+        {
+          "name": "showActionButton",
+          "type": "boolean",
+          "default": "false",
+          "description": "Show secondary action button"
+        },
+        {
+          "name": "actionLabel",
+          "type": "string",
+          "description": "Label for action button"
+        },
+        {
+          "name": "submitLabel",
+          "type": "string",
+          "description": "Label for submit button"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false",
+          "description": "Disabled state"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onFocus",
+          "detail": "FocusDetail",
+          "description": "Input gains focus"
+        },
+        {
+          "name": "onBlur",
+          "detail": "FocusDetail",
+          "description": "Input loses focus"
+        },
+        {
+          "name": "onKeydown",
+          "detail": "KeyboardDetail",
+          "description": "Key pressed"
+        }
+      ],
+      "notes": [
+        "Form-associated — participates in native <form> submission via ElementInternals.",
+        "Ref exposes focus() method."
+      ]
+    },
+    {
+      "id": "date-picker",
+      "href": "/docs/components/date-picker",
+      "exportHref": "/ai/components/date-picker.json",
+      "title": "Date Picker",
+      "description": "Calendar-based date input with keyboard navigation and locale support.",
+      "category": "Form Inputs",
+      "importName": "DatePicker",
+      "variants": [
+        "outline",
+        "filled",
+        "ghost"
+      ],
+      "shapes": [
+        "sharp",
+        "rounded"
+      ],
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "Input label"
+        },
+        {
+          "name": "variant",
+          "type": "'outline' | 'filled' | 'ghost'",
+          "default": "'outline'",
+          "description": "Visual treatment"
+        },
+        {
+          "name": "shape",
+          "type": "'sharp' | 'rounded'",
+          "default": "'rounded'",
+          "description": "Border radius"
+        },
+        {
+          "name": "selected",
+          "type": "string",
+          "description": "Selected date (ISO string)"
+        },
+        {
+          "name": "min",
+          "type": "string",
+          "description": "Earliest selectable date"
+        },
+        {
+          "name": "max",
+          "type": "string",
+          "description": "Latest selectable date"
+        },
+        {
+          "name": "disabledDates",
+          "type": "string[]",
+          "description": "Dates that cannot be selected"
+        },
+        {
+          "name": "format",
+          "type": "'iso' | 'us-short' | 'eu-short' | 'eu-dot'",
+          "description": "Display format"
+        },
+        {
+          "name": "firstDay",
+          "type": "'monday' | 'sunday'",
+          "description": "First day of the week"
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "description": "Placeholder text"
+        },
+        {
+          "name": "helperText",
+          "type": "string",
+          "description": "Hint text below input"
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "description": "Error message"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false",
+          "description": "Disabled state"
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "default": "false",
+          "description": "Required field"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "Form field name"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onInput",
+          "detail": "InputDetail",
+          "description": "Date typed — { value: string }"
+        },
+        {
+          "name": "onChange",
+          "detail": "InputDetail",
+          "description": "Date selected — { value: string }"
+        }
+      ],
+      "notes": [
+        "Form-associated — participates in native <form> submission.",
+        "Ref exposes open(), close(), and focus() methods."
+      ]
+    },
+    {
+      "id": "search-bar",
+      "href": "/docs/components/search-bar",
+      "exportHref": "/ai/components/search-bar.json",
+      "title": "Search Bar",
+      "description": "Search input with clear button, keyboard shortcut hint, and optional shimmer animation.",
+      "category": "Form Inputs",
+      "importName": "SearchBar",
+      "variants": [
+        "outline",
+        "filled",
+        "ghost"
+      ],
+      "shapes": [
+        "sharp",
+        "rounded",
+        "pill"
+      ],
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "description": "Accessible label"
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "description": "Placeholder text"
+        },
+        {
+          "name": "variant",
+          "type": "'outline' | 'filled' | 'ghost'",
+          "default": "'outline'",
+          "description": "Visual treatment"
+        },
+        {
+          "name": "shape",
+          "type": "'sharp' | 'rounded' | 'pill'",
+          "default": "'rounded'",
+          "description": "Border radius"
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "description": "Controlled value"
+        },
+        {
+          "name": "debounceMs",
+          "type": "number",
+          "default": "0",
+          "description": "Debounce delay in ms"
+        },
+        {
+          "name": "loading",
+          "type": "boolean",
+          "default": "false",
+          "description": "Show loading state"
+        },
+        {
+          "name": "shortcut",
+          "type": "string",
+          "description": "Keyboard shortcut hint (e.g. \"Cmd+K\")"
+        },
+        {
+          "name": "expandable",
+          "type": "boolean",
+          "default": "false",
+          "description": "Collapse to icon, expand on focus"
+        },
+        {
+          "name": "shimmer",
+          "type": "boolean",
+          "default": "false",
+          "description": "Shimmer animation on the border"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false",
+          "description": "Disabled state"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "Form field name"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onFocus",
+          "detail": "FocusDetail",
+          "description": "Input gains focus"
+        },
+        {
+          "name": "onBlur",
+          "detail": "FocusDetail",
+          "description": "Input loses focus"
+        },
+        {
+          "name": "onKeydown",
+          "detail": "KeyboardDetail",
+          "description": "Key pressed"
+        }
+      ],
+      "notes": [
+        "Form-associated — participates in native <form> submission.",
+        "Ref exposes focus() and clear() methods."
+      ]
+    },
+    {
+      "id": "file-upload",
+      "href": "/docs/components/file-upload",
+      "exportHref": "/ai/components/file-upload.json",
+      "title": "File Upload",
+      "description": "File selection with drag-and-drop zone, preview thumbnails, and validation.",
+      "category": "Form Inputs",
+      "importName": "FileUpload",
+      "variants": [
+        "outline",
+        "filled",
+        "subtle"
+      ],
+      "shapes": [
+        "sharp",
+        "rounded",
+        "pill"
+      ],
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "description": "Accessible label"
+        },
+        {
+          "name": "mode",
+          "type": "'inline' | 'overlay'",
+          "description": "Drop zone layout"
+        },
+        {
+          "name": "variant",
+          "type": "'outline' | 'filled' | 'subtle'",
+          "default": "'outline'",
+          "description": "Visual treatment"
+        },
+        {
+          "name": "shape",
+          "type": "'sharp' | 'rounded' | 'pill'",
+          "default": "'rounded'",
+          "description": "Border radius"
+        },
+        {
+          "name": "multiple",
+          "type": "boolean",
+          "default": "false",
+          "description": "Allow multiple files"
+        },
+        {
+          "name": "accept",
+          "type": "string",
+          "description": "Accepted file types (e.g. \"image/*,.pdf\")"
+        },
+        {
+          "name": "maxSize",
+          "type": "number",
+          "default": "0",
+          "description": "Max file size in bytes (0 = unlimited)"
+        },
+        {
+          "name": "heading",
+          "type": "string",
+          "description": "Drop zone heading text"
+        },
+        {
+          "name": "browseText",
+          "type": "string",
+          "description": "Browse button text"
+        },
+        {
+          "name": "hint",
+          "type": "string",
+          "description": "Hint text below drop zone"
+        },
+        {
+          "name": "preview",
+          "type": "boolean",
+          "default": "false",
+          "description": "Show file preview thumbnails"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false",
+          "description": "Disabled state"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onChange",
+          "detail": "—",
+          "description": "Files selected or dropped"
+        }
+      ]
+    },
+    {
+      "id": "tabs",
+      "href": "/docs/components/tabs",
+      "exportHref": "/ai/components/tabs.json",
+      "title": "Tabs",
+      "description": "Organize content into switchable panels. Supports underline, enclosed, and pill styles.",
+      "category": "Navigation",
+      "importName": "Tabs",
+      "variants": [
+        "underline",
+        "enclosed",
+        "pill"
+      ],
+      "parts": [
+        "base",
+        "tablist",
+        "panel"
+      ],
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "Accessible tablist label"
+        },
+        {
+          "name": "variant",
+          "type": "'underline' | 'enclosed' | 'pill'",
+          "default": "'underline'",
+          "description": "Visual style"
+        },
+        {
+          "name": "defaultTab",
+          "type": "string",
+          "description": "Initially active tab value"
+        },
+        {
+          "name": "items",
+          "type": "TabItem[]",
+          "required": true,
+          "description": "{ value, label, content (HTML string) }"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onChange",
+          "detail": "SelectDetail",
+          "description": "Tab changed — { value: string }"
+        }
+      ],
+      "notes": [
+        "Panel content is an HTML string, not JSX."
+      ]
+    },
+    {
+      "id": "accordion",
+      "href": "/docs/components/accordion",
+      "exportHref": "/ai/components/accordion.json",
+      "title": "Accordion",
+      "description": "Expandable content sections. Supports single or multiple expanded panels.",
+      "category": "Navigation",
+      "importName": "Accordion",
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "Accessible accordion label"
+        },
+        {
+          "name": "mode",
+          "type": "'single' | 'multiple'",
+          "default": "'single'",
+          "description": "How many panels can be open"
+        },
+        {
+          "name": "headingLevel",
+          "type": "'h2' | 'h3' | 'h4' | 'h5' | 'h6'",
+          "default": "'h3'",
+          "description": "Heading level for triggers"
+        },
+        {
+          "name": "defaultExpanded",
+          "type": "string[]",
+          "description": "Initially expanded panel IDs"
+        },
+        {
+          "name": "items",
+          "type": "AccordionItem[]",
+          "required": true,
+          "description": "{ id, trigger_label, panel_content (HTML string) }"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onChange",
+          "detail": "AccordionDetail",
+          "description": "Expanded panels changed — { expanded: string[] }"
+        }
+      ],
+      "notes": [
+        "Panel content is an HTML string, not JSX.",
+        "Chevron rotation is handled by WASM — direction updates on interaction."
+      ]
+    },
+    {
+      "id": "breadcrumb",
+      "href": "/docs/components/breadcrumb",
+      "exportHref": "/ai/components/breadcrumb.json",
+      "title": "Breadcrumb",
+      "description": "Hierarchical navigation trail showing the current page location.",
+      "category": "Navigation",
+      "importName": "Breadcrumb",
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "navLabel",
+          "type": "string",
+          "required": true,
+          "description": "Accessible nav label"
+        },
+        {
+          "name": "items",
+          "type": "BreadcrumbItem[]",
+          "required": true,
+          "description": "{ label, href?, current? }"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onNavigate",
+          "detail": "NavigateDetail",
+          "description": "Item clicked — { href, label }"
+        }
+      ]
+    },
+    {
+      "id": "menu",
+      "href": "/docs/components/menu",
+      "exportHref": "/ai/components/menu.json",
+      "title": "Menu",
+      "description": "Action list triggered by a button. Supports icons, shortcuts, separators, and danger items.",
+      "category": "Navigation",
+      "importName": "Menu",
+      "parts": [
+        "trigger",
+        "panel"
+      ],
+      "props": [
+        {
+          "name": "triggerLabel",
+          "type": "string",
+          "required": true,
+          "description": "Trigger button label"
+        },
+        {
+          "name": "entries",
+          "type": "MenuEntry[]",
+          "required": true,
+          "description": "{ type, id, label, icon?, shortcut?, danger?, disabled? }"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onAction",
+          "detail": "MenuActionDetail",
+          "description": "Item selected — { id, label? }"
+        }
+      ]
+    },
+    {
+      "id": "pagination",
+      "href": "/docs/components/pagination",
+      "exportHref": "/ai/components/pagination.json",
+      "title": "Pagination",
+      "description": "Navigate between pages of content.",
+      "category": "Navigation",
+      "importName": "Pagination",
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "currentPage",
+          "type": "number",
+          "required": true,
+          "description": "Active page (1-indexed)"
+        },
+        {
+          "name": "pageSize",
+          "type": "number",
+          "required": true,
+          "description": "Items per page"
+        },
+        {
+          "name": "totalItems",
+          "type": "number",
+          "required": true,
+          "description": "Total item count"
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "description": "Accessible label for the nav element"
+        },
+        {
+          "name": "showInfo",
+          "type": "boolean",
+          "description": "Show \"Page X of Y\" info text"
+        },
+        {
+          "name": "showPrevNext",
+          "type": "boolean",
+          "description": "Show previous/next buttons"
+        },
+        {
+          "name": "pageSizeOptions",
+          "type": "string",
+          "description": "Comma-separated page size options"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onChange",
+          "detail": "PageDetail",
+          "description": "Page changed — { page, page_size? }"
+        }
+      ],
+      "notes": [
+        "Page navigation is consumer-controlled. Listen to onChange, then update currentPage with the new page value from the event detail."
+      ]
+    },
+    {
+      "id": "table",
+      "href": "/docs/components/table",
+      "exportHref": "/ai/components/table.json",
+      "title": "Table",
+      "description": "Structured data display with sorting, selection, pagination, row hover, and striping.",
+      "category": "Navigation",
+      "importName": "Table",
+      "variants": [
+        "plain",
+        "striped",
+        "bordered"
+      ],
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "caption",
+          "type": "string",
+          "required": true,
+          "description": "Table caption (accessible label)"
+        },
+        {
+          "name": "variant",
+          "type": "'plain' | 'striped' | 'bordered'",
+          "default": "'plain'",
+          "description": "Visual style"
+        },
+        {
+          "name": "hoverable",
+          "type": "boolean",
+          "default": "false",
+          "description": "Highlight rows on hover"
+        },
+        {
+          "name": "stickyHeader",
+          "type": "boolean",
+          "default": "false",
+          "description": "Pin header row when scrolling"
+        },
+        {
+          "name": "columns",
+          "type": "TableColumn[]",
+          "required": true,
+          "description": "{ id, header, sortable?, width?, align?, pinned? }"
+        },
+        {
+          "name": "rows",
+          "type": "TableRow[]",
+          "required": true,
+          "description": "{ id, cells: TableCell[] | Record<string, string> }"
+        },
+        {
+          "name": "sorts",
+          "type": "SortState[]",
+          "description": "Current sort state — [{ column_id, direction }]. Consumer-controlled."
+        },
+        {
+          "name": "selectable",
+          "type": "'single' | 'multiple'",
+          "description": "Row selection mode"
+        },
+        {
+          "name": "selected",
+          "type": "string[]",
+          "description": "Currently selected row IDs (controlled)"
+        },
+        {
+          "name": "pagination",
+          "type": "PaginationConfig",
+          "description": "{ current_page, page_size, total_items, page_size_options? }"
+        },
+        {
+          "name": "footer",
+          "type": "FooterRow[]",
+          "description": "Footer rows (e.g. totals)"
+        },
+        {
+          "name": "emptyState",
+          "type": "EmptyStateConfig",
+          "description": "Content shown when rows is empty"
+        },
+        {
+          "name": "loading",
+          "type": "number",
+          "description": "Number of skeleton rows to show while loading"
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "description": "Error message to display instead of rows"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false",
+          "description": "Disable all interactions"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onSort",
+          "detail": "SortDetail",
+          "description": "Column sort clicked — { column_id, direction }"
+        },
+        {
+          "name": "onSelect",
+          "detail": "TableSelectDetail",
+          "description": "Row selection changed — { selected: string[] }"
+        },
+        {
+          "name": "onExpand",
+          "detail": "TableExpandDetail",
+          "description": "Row detail toggled — { id, expanded }"
+        },
+        {
+          "name": "onPage",
+          "detail": "PageDetail",
+          "description": "Pagination changed — { page, page_size? }"
+        },
+        {
+          "name": "onKeydown",
+          "detail": "KeyboardDetail",
+          "description": "Key pressed on focused row"
+        },
+        {
+          "name": "onKeyup",
+          "detail": "KeyboardDetail",
+          "description": "Key released on focused row"
+        }
+      ],
+      "notes": [
+        "Sorting is consumer-controlled. The Table fires onSort but does NOT re-order rows internally. You must listen to onSort, update your rows, and pass the current sort via the sorts prop.",
+        "Selection is also consumer-controlled. Listen to onSelect and pass selected row IDs back via the selected prop.",
+        "Pagination is consumer-controlled. Listen to onPage and update the pagination prop with the new current_page.",
+        "Cells accept either an array of TableCell objects (positional, matching column order) or a Record keyed by column id."
+      ]
+    },
+    {
+      "id": "listbox",
+      "href": "/docs/components/listbox",
+      "exportHref": "/ai/components/listbox.json",
+      "title": "Listbox",
+      "description": "Scrollable selectable option list with keyboard navigation.",
+      "category": "Navigation",
+      "importName": "Listbox",
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "Accessible list label"
+        },
+        {
+          "name": "items",
+          "type": "SelectOption[]",
+          "required": true,
+          "description": "{ value, label, icon? }"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onChange",
+          "detail": "SelectDetail",
+          "description": "Item selected — { value: string }"
+        }
+      ]
+    },
+    {
+      "id": "stepper",
+      "href": "/docs/components/stepper",
+      "exportHref": "/ai/components/stepper.json",
+      "title": "Stepper",
+      "description": "Multi-step progress indicator with status per step. Supports horizontal and vertical layout.",
+      "category": "Navigation",
+      "importName": "Stepper",
+      "variants": [
+        "outline",
+        "filled",
+        "ghost"
+      ],
+      "shapes": [
+        "sharp",
+        "rounded"
+      ],
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "description": "Accessible label"
+        },
+        {
+          "name": "steps",
+          "type": "StepperStep[]",
+          "required": true,
+          "description": "{ label, description?, status? }"
+        },
+        {
+          "name": "current",
+          "type": "number",
+          "default": "0",
+          "description": "Active step index (0-based)"
+        },
+        {
+          "name": "variant",
+          "type": "'outline' | 'filled' | 'ghost'",
+          "default": "'outline'",
+          "description": "Visual treatment"
+        },
+        {
+          "name": "shape",
+          "type": "'sharp' | 'rounded'",
+          "default": "'rounded'",
+          "description": "Border radius"
+        },
+        {
+          "name": "orientation",
+          "type": "'horizontal' | 'vertical'",
+          "default": "'horizontal'",
+          "description": "Layout direction"
+        },
+        {
+          "name": "linear",
+          "type": "boolean",
+          "default": "false",
+          "description": "Enforce sequential completion"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onChange",
+          "detail": "SelectDetail",
+          "description": "Step clicked — { value: string }"
+        }
+      ]
+    },
+    {
+      "id": "profile-menu",
+      "href": "/docs/components/profile-menu",
+      "exportHref": "/ai/components/profile-menu.json",
+      "title": "Profile Menu",
+      "description": "Avatar-triggered dropdown menu for user account actions.",
+      "category": "Navigation",
+      "importName": "ProfileMenu",
+      "shapes": [
+        "circle",
+        "rounded"
+      ],
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "Accessible label"
+        },
+        {
+          "name": "image",
+          "type": "string",
+          "description": "Avatar image URL"
+        },
+        {
+          "name": "initials",
+          "type": "string",
+          "description": "Initials when no image"
+        },
+        {
+          "name": "shape",
+          "type": "'circle' | 'rounded'",
+          "default": "'circle'",
+          "description": "Avatar shape"
+        },
+        {
+          "name": "width",
+          "type": "'auto' | 'sm' | 'md' | 'lg'",
+          "description": "Menu panel width"
+        },
+        {
+          "name": "entries",
+          "type": "MenuEntry[]",
+          "required": true,
+          "description": "{ type, id, label, icon?, shortcut?, danger?, disabled? }"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false",
+          "description": "Disabled state"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onAction",
+          "detail": "MenuActionDetail",
+          "description": "Item selected — { id, label? }"
+        }
+      ],
+      "notes": [
+        "Ref exposes open() and close() methods."
+      ]
+    },
+    {
+      "id": "alert",
+      "href": "/docs/components/alert",
+      "exportHref": "/ai/components/alert.json",
+      "title": "Alert",
+      "description": "Contextual feedback messages for user actions. Supports icons, dismiss, and action buttons.",
+      "category": "Feedback",
+      "importName": "Alert",
+      "variants": [
+        "subtle",
+        "filled",
+        "outline"
+      ],
+      "intents": [
+        "neutral",
+        "info",
+        "success",
+        "warning",
+        "danger"
+      ],
+      "parts": [
+        "base",
+        "content"
+      ],
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "required": true,
+          "description": "Alert heading"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "Alert body text"
+        },
+        {
+          "name": "variant",
+          "type": "'subtle' | 'filled' | 'outline'",
+          "default": "'subtle'",
+          "description": "Visual treatment"
+        },
+        {
+          "name": "intent",
+          "type": "'neutral' | 'info' | 'success' | 'warning' | 'danger'",
+          "default": "'info'",
+          "description": "Semantic color"
+        },
+        {
+          "name": "showIcon",
+          "type": "boolean",
+          "default": "true",
+          "description": "Show intent icon"
+        },
+        {
+          "name": "dismissible",
+          "type": "boolean",
+          "default": "false",
+          "description": "Show dismiss button"
+        },
+        {
+          "name": "actions",
+          "type": "ReactNode",
+          "description": "Action slot (buttons)"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onDismiss",
+          "detail": "DismissDetail",
+          "description": "Dismissed — { reason }"
+        }
+      ]
+    },
+    {
+      "id": "toast",
+      "href": "/docs/components/toast",
+      "exportHref": "/ai/components/toast.json",
+      "title": "Toast",
+      "description": "Temporary notification messages that auto-dismiss.",
+      "category": "Feedback",
+      "importName": "Toast",
+      "variants": [
+        "subtle",
+        "filled",
+        "outline"
+      ],
+      "intents": [
+        "neutral",
+        "info",
+        "success",
+        "warning",
+        "danger"
+      ],
+      "parts": [
+        "base",
+        "content"
+      ],
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "required": true,
+          "description": "Toast heading"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "Toast body text"
+        },
+        {
+          "name": "variant",
+          "type": "'subtle' | 'filled' | 'outline'",
+          "default": "'filled'",
+          "description": "Visual treatment"
+        },
+        {
+          "name": "intent",
+          "type": "'neutral' | 'info' | 'success' | 'warning' | 'danger'",
+          "default": "'info'",
+          "description": "Semantic color"
+        },
+        {
+          "name": "showIcon",
+          "type": "boolean",
+          "default": "true",
+          "description": "Show intent icon"
+        },
+        {
+          "name": "dismissible",
+          "type": "boolean",
+          "default": "true",
+          "description": "Show dismiss button"
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "default": "5000",
+          "description": "Auto-dismiss delay in ms"
+        },
+        {
+          "name": "action",
+          "type": "ReactNode",
+          "description": "Action slot (single button)"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onDismiss",
+          "detail": "DismissDetail",
+          "description": "Dismissed — { reason: \"user\" | \"timeout\" }"
+        }
+      ]
+    },
+    {
+      "id": "progress",
+      "href": "/docs/components/progress",
+      "exportHref": "/ai/components/progress.json",
+      "title": "Progress",
+      "description": "Visual indicator of completion percentage.",
+      "category": "Feedback",
+      "importName": "Progress",
+      "intents": [
+        "primary",
+        "success",
+        "warning",
+        "danger"
+      ],
+      "parts": [
+        "base",
+        "fill"
+      ],
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "Accessible label"
+        },
+        {
+          "name": "value",
+          "type": "number",
+          "required": true,
+          "description": "Completion percentage (0-100)"
+        },
+        {
+          "name": "intent",
+          "type": "'primary' | 'success' | 'warning' | 'danger'",
+          "default": "'primary'",
+          "description": "Bar color"
+        },
+        {
+          "name": "valueText",
+          "type": "string",
+          "description": "Custom value display text"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "notes": [
+        "value is always 0-100 (percentage). No max prop.",
+        "Use ::part(fill) to style the progress bar."
+      ]
+    },
+    {
+      "id": "spinner",
+      "href": "/docs/components/spinner",
+      "exportHref": "/ai/components/spinner.json",
+      "title": "Spinner",
+      "description": "Loading indicator for async operations.",
+      "category": "Feedback",
+      "importName": "Spinner",
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "description": "Accessible label (e.g. \"Loading...\")"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ]
+    },
+    {
+      "id": "skeleton",
+      "href": "/docs/components/skeleton",
+      "exportHref": "/ai/components/skeleton.json",
+      "title": "Skeleton",
+      "description": "Placeholder shapes while content loads. Supports text, circle, and rectangular variants.",
+      "category": "Feedback",
+      "importName": "Skeleton",
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "variant",
+          "type": "'text' | 'circle' | 'rectangular'",
+          "default": "'text'",
+          "description": "Shape variant"
+        },
+        {
+          "name": "animation",
+          "type": "'pulse' | 'wave'",
+          "default": "'pulse'",
+          "description": "Animation style"
+        },
+        {
+          "name": "lines",
+          "type": "number",
+          "description": "Number of text lines"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ]
+    },
+    {
+      "id": "thinking",
+      "href": "/docs/components/thinking",
+      "exportHref": "/ai/components/thinking.json",
+      "title": "Thinking",
+      "description": "Animated thinking/loading indicator with shimmer effect. Designed for AI chat interfaces.",
+      "category": "Feedback",
+      "importName": "Thinking",
+      "variants": [
+        "ghost",
+        "filled"
+      ],
+      "shapes": [
+        "sharp",
+        "rounded",
+        "pill"
+      ],
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "description": "Accessible label"
+        },
+        {
+          "name": "variant",
+          "type": "'ghost' | 'filled'",
+          "default": "'ghost'",
+          "description": "Visual treatment"
+        },
+        {
+          "name": "shape",
+          "type": "'sharp' | 'rounded' | 'pill'",
+          "default": "'rounded'",
+          "description": "Border radius"
+        },
+        {
+          "name": "speed",
+          "type": "string",
+          "description": "Animation speed"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ]
+    },
+    {
+      "id": "dialog",
+      "href": "/docs/components/dialog",
+      "exportHref": "/ai/components/dialog.json",
+      "title": "Dialog",
+      "description": "Modal overlay for focused interactions. Traps focus, closes on Escape or backdrop click.",
+      "category": "Overlays",
+      "importName": "Dialog",
+      "parts": [
+        "base",
+        "panel",
+        "header",
+        "body",
+        "footer"
+      ],
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "required": true,
+          "description": "Dialog heading"
+        },
+        {
+          "name": "variant",
+          "type": "'default' | 'alert'",
+          "default": "'default'",
+          "description": "Dialog type"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "Subtitle text"
+        },
+        {
+          "name": "footer",
+          "type": "ReactNode",
+          "description": "Footer slot (action buttons)"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "description": "Body content"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onClose",
+          "detail": "CloseDetail",
+          "description": "Closed — { reason: \"escape\" | \"backdrop\" | \"close-button\" }"
+        }
+      ]
+    },
+    {
+      "id": "drawer",
+      "href": "/docs/components/drawer",
+      "exportHref": "/ai/components/drawer.json",
+      "title": "Drawer",
+      "description": "Slide-in panel from screen edge. Useful for navigation, settings, or detail views.",
+      "category": "Overlays",
+      "importName": "Drawer",
+      "parts": [
+        "base",
+        "panel",
+        "header",
+        "body",
+        "footer"
+      ],
+      "props": [
+        {
+          "name": "open",
+          "type": "boolean",
+          "default": "false",
+          "description": "Declarative open/close control"
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "required": true,
+          "description": "Drawer heading"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "Subtitle text below the heading"
+        },
+        {
+          "name": "side",
+          "type": "'left' | 'right' | 'top' | 'bottom'",
+          "default": "'right'",
+          "description": "Edge the drawer slides in from"
+        },
+        {
+          "name": "shape",
+          "type": "'sharp' | 'rounded' | 'pill'",
+          "default": "'rounded'",
+          "description": "Corner radius"
+        },
+        {
+          "name": "footer",
+          "type": "ReactNode",
+          "description": "Footer slot (action buttons)"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "description": "Body content"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "events": [
+        {
+          "name": "onClose",
+          "detail": "CloseDetail",
+          "description": "Closed via backdrop, Escape, or close button"
+        }
+      ],
+      "notes": [
+        "Supports both declarative (open prop) and imperative (ref.open() / ref.close()) control.",
+        "Closes automatically on backdrop click, Escape key, or close button. Listen to onClose to sync your state.",
+        "Animations respect prefers-reduced-motion. Enter: 400ms slide, Exit: 250ms slide."
+      ]
+    },
+    {
+      "id": "popover",
+      "href": "/docs/components/popover",
+      "exportHref": "/ai/components/popover.json",
+      "title": "Popover",
+      "description": "Floating content anchored to a trigger element.",
+      "category": "Overlays",
+      "importName": "Popover",
+      "parts": [
+        "trigger",
+        "panel"
+      ],
+      "props": [
+        {
+          "name": "triggerLabel",
+          "type": "string",
+          "required": true,
+          "description": "Trigger button label"
+        },
+        {
+          "name": "placement",
+          "type": "'top' | 'bottom' | 'left' | 'right'",
+          "default": "'bottom'",
+          "description": "Panel position"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "description": "Panel content"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ]
+    },
+    {
+      "id": "tooltip",
+      "href": "/docs/components/tooltip",
+      "exportHref": "/ai/components/tooltip.json",
+      "title": "Tooltip",
+      "description": "Contextual information on hover or focus. Appears above the trigger element.",
+      "category": "Overlays",
+      "importName": "Tooltip",
+      "parts": [
+        "base",
+        "content"
+      ],
+      "props": [
+        {
+          "name": "content",
+          "type": "string",
+          "required": true,
+          "description": "Tooltip text"
+        },
+        {
+          "name": "position",
+          "type": "'top' | 'bottom' | 'left' | 'right'",
+          "default": "'top'",
+          "description": "Tooltip position"
+        },
+        {
+          "name": "trigger",
+          "type": "ReactNode",
+          "description": "Trigger element"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "description": "Alias for trigger"
+        }
+      ],
+      "notes": [
+        "children and trigger are interchangeable — if both provided, trigger wins.",
+        "Accessible name comes from content prop."
+      ]
+    },
+    {
+      "id": "backdrop",
+      "href": "/docs/components/backdrop",
+      "exportHref": "/ai/components/backdrop.json",
+      "title": "Backdrop",
+      "description": "Overlay layer for modals and drawers with tint, blur, and click-to-close support.",
+      "category": "Overlays",
+      "importName": "Backdrop",
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "tint",
+          "type": "string",
+          "description": "Background color (CSS value)"
+        },
+        {
+          "name": "blur",
+          "type": "string",
+          "description": "Backdrop blur amount (CSS value)"
+        },
+        {
+          "name": "dismissible",
+          "type": "boolean",
+          "default": "false",
+          "description": "Close on click"
+        }
+      ],
+      "notes": [
+        "Used internally by Dialog and Drawer. Can be used standalone for custom overlays."
+      ]
+    },
+    {
+      "id": "message-bubble",
+      "href": "/docs/components/message-bubble",
+      "exportHref": "/ai/components/message-bubble.json",
+      "title": "Message Bubble",
+      "description": "Chat message container with sender alignment, sender metadata, and timestamp.",
+      "category": "Data Display",
+      "importName": "MessageBubble",
+      "variants": [
+        "filled",
+        "ghost"
+      ],
+      "shapes": [
+        "sharp",
+        "rounded"
+      ],
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "role",
+          "type": "'user' | 'assistant'",
+          "description": "Sender role (controls alignment)"
+        },
+        {
+          "name": "variant",
+          "type": "'filled' | 'ghost'",
+          "default": "'filled'",
+          "description": "Visual treatment"
+        },
+        {
+          "name": "shape",
+          "type": "'sharp' | 'rounded'",
+          "default": "'rounded'",
+          "description": "Border radius"
+        },
+        {
+          "name": "alignment",
+          "type": "'auto' | 'start' | 'end'",
+          "default": "'auto'",
+          "description": "Message alignment"
+        },
+        {
+          "name": "htmlContent",
+          "type": "string",
+          "description": "Pre-rendered HTML content"
+        },
+        {
+          "name": "senderName",
+          "type": "string",
+          "description": "Sender display name"
+        },
+        {
+          "name": "timestamp",
+          "type": "string",
+          "description": "Message timestamp"
+        },
+        {
+          "name": "animated",
+          "type": "boolean",
+          "default": "false",
+          "description": "Animate entry"
+        },
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "description": "Message content"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "notes": [
+        "Use Message Bubble for simple sender-aligned chat messages.",
+        "Start with the /docs/messages guide if you need to understand how it relates to Message Group and Message Part."
+      ]
+    },
+    {
+      "id": "message-group",
+      "href": "/docs/components/message-group",
+      "exportHref": "/ai/components/message-group.json",
+      "title": "Message Group",
+      "description": "Grouped sequence of message parts — text, code blocks, tool calls, and thinking indicators.",
+      "category": "Data Display",
+      "importName": "MessageGroup",
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "role",
+          "type": "'user' | 'assistant'",
+          "description": "Sender role"
+        },
+        {
+          "name": "alignment",
+          "type": "'auto' | 'start' | 'end'",
+          "default": "'auto'",
+          "description": "Message alignment"
+        },
+        {
+          "name": "senderName",
+          "type": "string",
+          "description": "Sender display name"
+        },
+        {
+          "name": "animated",
+          "type": "boolean",
+          "default": "false",
+          "description": "Animate entry"
+        },
+        {
+          "name": "parts",
+          "type": "MessageGroupPart[]",
+          "description": "Array of message segments"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "notes": [
+        "Use Message Group when one assistant turn contains multiple typed parts such as text, code, tool activity, and thinking.",
+        "For grouped assistant turns, prefer the declarative MessageGroupPart[] parts array.",
+        "MessageGroupPart currently uses snake_case keys like tool_name and thinking_label.",
+        "Treat grouped parts as the settled record of an assistant turn rather than a scratch surface for every token.",
+        "Start with the /docs/messages guide if you need the conceptual model for the message stack."
+      ]
+    },
+    {
+      "id": "message-part",
+      "href": "/docs/components/message-part",
+      "exportHref": "/ai/components/message-part.json",
+      "title": "Message Part",
+      "description": "Standalone typed message segment with markdown, code blocks, tool activity, thinking states, errors, and optional streaming.",
+      "category": "Data Display",
+      "importName": "MessagePart",
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "kind",
+          "type": "'text' | 'tool-call' | 'tool-result' | 'thinking' | 'code-block' | 'error'",
+          "default": "'text'",
+          "description": "Segment type"
+        },
+        {
+          "name": "content",
+          "type": "string",
+          "description": "Plain text, code, or error content"
+        },
+        {
+          "name": "htmlContent",
+          "type": "string",
+          "description": "Pre-rendered HTML content"
+        },
+        {
+          "name": "markdown",
+          "type": "boolean",
+          "default": "false",
+          "description": "Render text content as markdown"
+        },
+        {
+          "name": "toolName",
+          "type": "string",
+          "description": "Tool or function name for tool parts"
+        },
+        {
+          "name": "toolArguments",
+          "type": "string",
+          "description": "Serialized tool input for tool-call parts"
+        },
+        {
+          "name": "toolStatus",
+          "type": "'pending' | 'success' | 'error'",
+          "description": "Tool execution status"
+        },
+        {
+          "name": "thinkingLabel",
+          "type": "string",
+          "description": "Label for thinking state"
+        },
+        {
+          "name": "completed",
+          "type": "boolean",
+          "default": "false",
+          "description": "Mark a thinking state as completed"
+        },
+        {
+          "name": "language",
+          "type": "string",
+          "description": "Code language hint for code-block parts"
+        },
+        {
+          "name": "filename",
+          "type": "string",
+          "description": "Filename shown in the code block header"
+        },
+        {
+          "name": "connection",
+          "type": "'standalone' | 'first' | 'middle' | 'last'",
+          "default": "'standalone'",
+          "description": "Connected-card position when composing parts manually"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Segment size"
+        },
+        {
+          "name": "stream",
+          "type": "boolean",
+          "default": "false",
+          "description": "Enable streaming mode"
+        },
+        {
+          "name": "onStreamEnd",
+          "type": "(e: CustomEvent) => void",
+          "description": "Called after the final sanitizing render pass completes"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "notes": [
+        "Message Part can now be used directly for text, code blocks, tool calls, tool results, thinking, and errors.",
+        "Standalone Message Part uses camelCase props like toolName, toolStatus, and thinkingLabel.",
+        "Start with the /docs/messages guide before using Message Part directly in a larger conversation layout.",
+        "Supports streaming markdown rendering via ref methods (startStream, appendTokens, endStream).",
+        "Use it as the in-flight surface for streaming or for a single standalone segment, not as a replacement for an entire grouped assistant turn.",
+        "Use Message Group when one assistant turn contains several connected parts; use Message Part when one segment should stand alone."
+      ]
+    },
+    {
+      "id": "activity-group",
+      "href": "/docs/components/activity-group",
+      "exportHref": "/ai/components/activity-group.json",
+      "title": "Activity Group",
+      "description": "Grouped activity feed with expandable entries and status indicators.",
+      "category": "Data Display",
+      "importName": "ActivityGroup",
+      "parts": [
+        "base"
+      ],
+      "props": [
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Group status indicator"
+        },
+        {
+          "name": "summary",
+          "type": "string",
+          "description": "Summary text when collapsed"
+        },
+        {
+          "name": "action",
+          "type": "string",
+          "description": "Action button label"
+        },
+        {
+          "name": "expanded",
+          "type": "boolean",
+          "default": "false",
+          "description": "Expanded state"
+        },
+        {
+          "name": "border",
+          "type": "string",
+          "description": "Border style"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "notes": [
+        "Use Activity Group for operational or tool-driven updates around a conversation, not as a replacement for Message Bubble.",
+        "Start with the /docs/messages guide if you are designing an assistant or agent interface.",
+        "In the current React wrapper, status is still passed explicitly even though the broader message timeline model can derive it upstream."
+      ]
+    },
+    {
+      "id": "code-block",
+      "href": "/docs/components/code-block",
+      "exportHref": "/ai/components/code-block.json",
+      "title": "Code Block",
+      "description": "Display syntax-highlighted code with optional filename chrome, line numbers, traffic lights, and inline copy.",
+      "category": "Data Display",
+      "importName": "CodeBlock",
+      "parts": [
+        "base",
+        "code-titlebar",
+        "code"
+      ],
+      "props": [
+        {
+          "name": "content",
+          "type": "string",
+          "required": true,
+          "description": "Code content to render"
+        },
+        {
+          "name": "language",
+          "type": "string",
+          "description": "Language hint for syntax highlighting"
+        },
+        {
+          "name": "filename",
+          "type": "string",
+          "description": "Optional filename shown in the title bar"
+        },
+        {
+          "name": "variant",
+          "type": "string",
+          "description": "Presentation mode, such as minimal"
+        },
+        {
+          "name": "shape",
+          "type": "string",
+          "description": "Container shape when supported"
+        },
+        {
+          "name": "lineNumbers",
+          "type": "boolean",
+          "default": "false",
+          "description": "Show line numbers"
+        },
+        {
+          "name": "copyButton",
+          "type": "boolean",
+          "default": "false",
+          "description": "Show copy-to-clipboard button"
+        },
+        {
+          "name": "trafficLights",
+          "type": "boolean",
+          "default": "false",
+          "description": "Show macOS-style traffic lights in the title bar"
+        },
+        {
+          "name": "slotted",
+          "type": "boolean",
+          "default": "false",
+          "description": "Render content in slotted mode"
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+          "default": "'md'",
+          "description": "Component size"
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "description": "CSS class on host element"
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles on host element"
+        },
+        {
+          "name": "ref",
+          "type": "React.Ref<HTMLElement>",
+          "description": "Ref forwarded to Custom Element"
+        }
+      ],
+      "notes": [
+        "Use copyButton to enable built-in copy feedback with an inline checkmark.",
+        "Use trafficLights for terminal-style framing in docs and chat surfaces.",
+        "Minimal variant is useful for inline docs sections where full chrome would be too heavy."
+      ]
+    }
+  ]
+}

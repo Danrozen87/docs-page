@@ -1,0 +1,103 @@
+{
+  "id": "select",
+  "href": "/docs/components/select",
+  "exportHref": "/ai/components/select.json",
+  "title": "Select",
+  "description": "Dropdown selection from a list of options. Supports single/multi mode and option groups.",
+  "category": "Form Inputs",
+  "importName": "Select",
+  "variants": [
+    "outline",
+    "filled",
+    "ghost"
+  ],
+  "shapes": [
+    "sharp",
+    "rounded",
+    "pill"
+  ],
+  "parts": [
+    "base",
+    "trigger"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "description": "Select label"
+    },
+    {
+      "name": "variant",
+      "type": "'outline' | 'filled' | 'ghost'",
+      "default": "'outline'",
+      "description": "Visual treatment"
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "description": "Placeholder when no selection"
+    },
+    {
+      "name": "mode",
+      "type": "'single' | 'multiple'",
+      "default": "'single'",
+      "description": "Selection mode"
+    },
+    {
+      "name": "selected",
+      "type": "string",
+      "description": "Controlled selected value"
+    },
+    {
+      "name": "items",
+      "type": "SelectOption[]",
+      "description": "{ value, label }"
+    },
+    {
+      "name": "groups",
+      "type": "OptionGroup[]",
+      "description": "{ label, options: SelectOption[] }"
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "default": "false",
+      "description": "Required field"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": "false",
+      "description": "Disabled state"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "events": [
+    {
+      "name": "onChange",
+      "detail": "SelectDetail",
+      "description": "Fires on selection — { value: string }"
+    }
+  ]
+}

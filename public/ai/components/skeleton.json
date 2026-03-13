@@ -1,0 +1,52 @@
+{
+  "id": "skeleton",
+  "href": "/docs/components/skeleton",
+  "exportHref": "/ai/components/skeleton.json",
+  "title": "Skeleton",
+  "description": "Placeholder shapes while content loads. Supports text, circle, and rectangular variants.",
+  "category": "Feedback",
+  "importName": "Skeleton",
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "variant",
+      "type": "'text' | 'circle' | 'rectangular'",
+      "default": "'text'",
+      "description": "Shape variant"
+    },
+    {
+      "name": "animation",
+      "type": "'pulse' | 'wave'",
+      "default": "'pulse'",
+      "description": "Animation style"
+    },
+    {
+      "name": "lines",
+      "type": "number",
+      "description": "Number of text lines"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ]
+}

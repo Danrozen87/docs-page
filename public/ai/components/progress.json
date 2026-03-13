@@ -1,0 +1,69 @@
+{
+  "id": "progress",
+  "href": "/docs/components/progress",
+  "exportHref": "/ai/components/progress.json",
+  "title": "Progress",
+  "description": "Visual indicator of completion percentage.",
+  "category": "Feedback",
+  "importName": "Progress",
+  "intents": [
+    "primary",
+    "success",
+    "warning",
+    "danger"
+  ],
+  "parts": [
+    "base",
+    "fill"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "description": "Accessible label"
+    },
+    {
+      "name": "value",
+      "type": "number",
+      "required": true,
+      "description": "Completion percentage (0-100)"
+    },
+    {
+      "name": "intent",
+      "type": "'primary' | 'success' | 'warning' | 'danger'",
+      "default": "'primary'",
+      "description": "Bar color"
+    },
+    {
+      "name": "valueText",
+      "type": "string",
+      "description": "Custom value display text"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "notes": [
+    "value is always 0-100 (percentage). No max prop.",
+    "Use ::part(fill) to style the progress bar."
+  ]
+}

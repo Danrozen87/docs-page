@@ -1,0 +1,160 @@
+{
+  "id": "table",
+  "href": "/docs/components/table",
+  "exportHref": "/ai/components/table.json",
+  "title": "Table",
+  "description": "Structured data display with sorting, selection, pagination, row hover, and striping.",
+  "category": "Navigation",
+  "importName": "Table",
+  "variants": [
+    "plain",
+    "striped",
+    "bordered"
+  ],
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "caption",
+      "type": "string",
+      "required": true,
+      "description": "Table caption (accessible label)"
+    },
+    {
+      "name": "variant",
+      "type": "'plain' | 'striped' | 'bordered'",
+      "default": "'plain'",
+      "description": "Visual style"
+    },
+    {
+      "name": "hoverable",
+      "type": "boolean",
+      "default": "false",
+      "description": "Highlight rows on hover"
+    },
+    {
+      "name": "stickyHeader",
+      "type": "boolean",
+      "default": "false",
+      "description": "Pin header row when scrolling"
+    },
+    {
+      "name": "columns",
+      "type": "TableColumn[]",
+      "required": true,
+      "description": "{ id, header, sortable?, width?, align?, pinned? }"
+    },
+    {
+      "name": "rows",
+      "type": "TableRow[]",
+      "required": true,
+      "description": "{ id, cells: TableCell[] | Record<string, string> }"
+    },
+    {
+      "name": "sorts",
+      "type": "SortState[]",
+      "description": "Current sort state — [{ column_id, direction }]. Consumer-controlled."
+    },
+    {
+      "name": "selectable",
+      "type": "'single' | 'multiple'",
+      "description": "Row selection mode"
+    },
+    {
+      "name": "selected",
+      "type": "string[]",
+      "description": "Currently selected row IDs (controlled)"
+    },
+    {
+      "name": "pagination",
+      "type": "PaginationConfig",
+      "description": "{ current_page, page_size, total_items, page_size_options? }"
+    },
+    {
+      "name": "footer",
+      "type": "FooterRow[]",
+      "description": "Footer rows (e.g. totals)"
+    },
+    {
+      "name": "emptyState",
+      "type": "EmptyStateConfig",
+      "description": "Content shown when rows is empty"
+    },
+    {
+      "name": "loading",
+      "type": "number",
+      "description": "Number of skeleton rows to show while loading"
+    },
+    {
+      "name": "error",
+      "type": "string",
+      "description": "Error message to display instead of rows"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": "false",
+      "description": "Disable all interactions"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "events": [
+    {
+      "name": "onSort",
+      "detail": "SortDetail",
+      "description": "Column sort clicked — { column_id, direction }"
+    },
+    {
+      "name": "onSelect",
+      "detail": "TableSelectDetail",
+      "description": "Row selection changed — { selected: string[] }"
+    },
+    {
+      "name": "onExpand",
+      "detail": "TableExpandDetail",
+      "description": "Row detail toggled — { id, expanded }"
+    },
+    {
+      "name": "onPage",
+      "detail": "PageDetail",
+      "description": "Pagination changed — { page, page_size? }"
+    },
+    {
+      "name": "onKeydown",
+      "detail": "KeyboardDetail",
+      "description": "Key pressed on focused row"
+    },
+    {
+      "name": "onKeyup",
+      "detail": "KeyboardDetail",
+      "description": "Key released on focused row"
+    }
+  ],
+  "notes": [
+    "Sorting is consumer-controlled. The Table fires onSort but does NOT re-order rows internally. You must listen to onSort, update your rows, and pass the current sort via the sorts prop.",
+    "Selection is also consumer-controlled. Listen to onSelect and pass selected row IDs back via the selected prop.",
+    "Pagination is consumer-controlled. Listen to onPage and update the pagination prop with the new current_page.",
+    "Cells accept either an array of TableCell objects (positional, matching column order) or a Record keyed by column id."
+  ]
+}

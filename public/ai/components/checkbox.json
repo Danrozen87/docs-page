@@ -1,0 +1,90 @@
+{
+  "id": "checkbox",
+  "href": "/docs/components/checkbox",
+  "exportHref": "/ai/components/checkbox.json",
+  "title": "Checkbox",
+  "description": "Binary or tri-state selection control. Supports checked, unchecked, and indeterminate states.",
+  "category": "Form Inputs",
+  "importName": "Checkbox",
+  "shapes": [
+    "rounded",
+    "sharp"
+  ],
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "description": "Checkbox label text"
+    },
+    {
+      "name": "checked",
+      "type": "'checked' | 'indeterminate' | undefined",
+      "description": "Check state (string, NOT boolean)"
+    },
+    {
+      "name": "shape",
+      "type": "'rounded' | 'sharp'",
+      "default": "'rounded'",
+      "description": "Border radius"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": "false",
+      "description": "Disabled state"
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "default": "false",
+      "description": "Required field"
+    },
+    {
+      "name": "helperText",
+      "type": "string",
+      "description": "Hint text below"
+    },
+    {
+      "name": "error",
+      "type": "string",
+      "description": "Error message"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "events": [
+    {
+      "name": "onChange",
+      "detail": "CheckedDetail",
+      "description": "Fires on toggle — { checked: boolean }"
+    }
+  ],
+  "notes": [
+    "checked is a STRING, not a boolean. Use \"checked\", \"indeterminate\", or undefined.",
+    "checked=\"\" (empty string) maps to \"checked\" — not unchecked!",
+    "For unchecked state, use checked={undefined}."
+  ]
+}

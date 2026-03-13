@@ -1,0 +1,92 @@
+{
+  "id": "stepper",
+  "href": "/docs/components/stepper",
+  "exportHref": "/ai/components/stepper.json",
+  "title": "Stepper",
+  "description": "Multi-step progress indicator with status per step. Supports horizontal and vertical layout.",
+  "category": "Navigation",
+  "importName": "Stepper",
+  "variants": [
+    "outline",
+    "filled",
+    "ghost"
+  ],
+  "shapes": [
+    "sharp",
+    "rounded"
+  ],
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "description": "Accessible label"
+    },
+    {
+      "name": "steps",
+      "type": "StepperStep[]",
+      "required": true,
+      "description": "{ label, description?, status? }"
+    },
+    {
+      "name": "current",
+      "type": "number",
+      "default": "0",
+      "description": "Active step index (0-based)"
+    },
+    {
+      "name": "variant",
+      "type": "'outline' | 'filled' | 'ghost'",
+      "default": "'outline'",
+      "description": "Visual treatment"
+    },
+    {
+      "name": "shape",
+      "type": "'sharp' | 'rounded'",
+      "default": "'rounded'",
+      "description": "Border radius"
+    },
+    {
+      "name": "orientation",
+      "type": "'horizontal' | 'vertical'",
+      "default": "'horizontal'",
+      "description": "Layout direction"
+    },
+    {
+      "name": "linear",
+      "type": "boolean",
+      "default": "false",
+      "description": "Enforce sequential completion"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "events": [
+    {
+      "name": "onChange",
+      "detail": "SelectDetail",
+      "description": "Step clicked — { value: string }"
+    }
+  ]
+}

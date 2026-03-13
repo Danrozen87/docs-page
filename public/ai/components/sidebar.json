@@ -1,0 +1,76 @@
+{
+  "id": "sidebar",
+  "href": "/docs/components/sidebar",
+  "exportHref": "/ai/components/sidebar.json",
+  "title": "Sidebar",
+  "description": "Persistent navigation with responsive drawer. Supports groups, icons, active states, and collapse.",
+  "category": "Layout",
+  "importName": "Sidebar",
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "description": "Accessible nav label"
+    },
+    {
+      "name": "side",
+      "type": "'left' | 'right'",
+      "default": "'left'",
+      "description": "Sidebar position"
+    },
+    {
+      "name": "state",
+      "type": "'expanded' | 'collapsed'",
+      "default": "'expanded'",
+      "description": "Collapsed/expanded"
+    },
+    {
+      "name": "groups",
+      "type": "SidebarGroup[]",
+      "required": true,
+      "description": "{ label, items: SidebarItem[] }"
+    },
+    {
+      "name": "header",
+      "type": "ReactNode",
+      "description": "Header slot"
+    },
+    {
+      "name": "footer",
+      "type": "ReactNode",
+      "description": "Footer slot"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "events": [
+    {
+      "name": "onNavigate",
+      "detail": "NavigateDetail",
+      "description": "Item clicked — { href, label }"
+    }
+  ]
+}

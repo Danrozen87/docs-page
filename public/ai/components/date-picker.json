@@ -1,0 +1,140 @@
+{
+  "id": "date-picker",
+  "href": "/docs/components/date-picker",
+  "exportHref": "/ai/components/date-picker.json",
+  "title": "Date Picker",
+  "description": "Calendar-based date input with keyboard navigation and locale support.",
+  "category": "Form Inputs",
+  "importName": "DatePicker",
+  "variants": [
+    "outline",
+    "filled",
+    "ghost"
+  ],
+  "shapes": [
+    "sharp",
+    "rounded"
+  ],
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "description": "Input label"
+    },
+    {
+      "name": "variant",
+      "type": "'outline' | 'filled' | 'ghost'",
+      "default": "'outline'",
+      "description": "Visual treatment"
+    },
+    {
+      "name": "shape",
+      "type": "'sharp' | 'rounded'",
+      "default": "'rounded'",
+      "description": "Border radius"
+    },
+    {
+      "name": "selected",
+      "type": "string",
+      "description": "Selected date (ISO string)"
+    },
+    {
+      "name": "min",
+      "type": "string",
+      "description": "Earliest selectable date"
+    },
+    {
+      "name": "max",
+      "type": "string",
+      "description": "Latest selectable date"
+    },
+    {
+      "name": "disabledDates",
+      "type": "string[]",
+      "description": "Dates that cannot be selected"
+    },
+    {
+      "name": "format",
+      "type": "'iso' | 'us-short' | 'eu-short' | 'eu-dot'",
+      "description": "Display format"
+    },
+    {
+      "name": "firstDay",
+      "type": "'monday' | 'sunday'",
+      "description": "First day of the week"
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "description": "Placeholder text"
+    },
+    {
+      "name": "helperText",
+      "type": "string",
+      "description": "Hint text below input"
+    },
+    {
+      "name": "error",
+      "type": "string",
+      "description": "Error message"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": "false",
+      "description": "Disabled state"
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "default": "false",
+      "description": "Required field"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "Form field name"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "events": [
+    {
+      "name": "onInput",
+      "detail": "InputDetail",
+      "description": "Date typed — { value: string }"
+    },
+    {
+      "name": "onChange",
+      "detail": "InputDetail",
+      "description": "Date selected — { value: string }"
+    }
+  ],
+  "notes": [
+    "Form-associated — participates in native <form> submission.",
+    "Ref exposes open(), close(), and focus() methods."
+  ]
+}

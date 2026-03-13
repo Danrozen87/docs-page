@@ -1,0 +1,100 @@
+{
+  "id": "speed-dial",
+  "href": "/docs/components/speed-dial",
+  "exportHref": "/ai/components/speed-dial.json",
+  "title": "Speed Dial",
+  "description": "FAB with radiating action menu. Actions fan out in a direction with staggered animation and optional backdrop.",
+  "category": "Actions",
+  "importName": "SpeedDial",
+  "variants": [
+    "filled",
+    "outline",
+    "ghost"
+  ],
+  "shapes": [
+    "rounded",
+    "pill"
+  ],
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "Unique identifier"
+    },
+    {
+      "name": "icon",
+      "type": "string",
+      "required": true,
+      "description": "Trigger icon"
+    },
+    {
+      "name": "ariaLabel",
+      "type": "string",
+      "required": true,
+      "description": "Accessible label"
+    },
+    {
+      "name": "closeIcon",
+      "type": "string",
+      "description": "Icon when open (default: 45° rotation)"
+    },
+    {
+      "name": "variant",
+      "type": "'filled' | 'outline' | 'ghost'",
+      "default": "'filled'",
+      "description": "Visual treatment"
+    },
+    {
+      "name": "shape",
+      "type": "'rounded' | 'pill'",
+      "default": "'pill'",
+      "description": "Border radius"
+    },
+    {
+      "name": "size",
+      "type": "'sm' | 'md' | 'lg'",
+      "default": "'md'",
+      "description": "Trigger size"
+    },
+    {
+      "name": "direction",
+      "type": "'up' | 'down' | 'left' | 'right'",
+      "default": "'up'",
+      "description": "Action menu direction"
+    },
+    {
+      "name": "backdrop",
+      "type": "boolean",
+      "default": "true",
+      "description": "Show overlay when open"
+    },
+    {
+      "name": "tooltips",
+      "type": "boolean",
+      "default": "true",
+      "description": "Show labels alongside icons"
+    },
+    {
+      "name": "actions",
+      "type": "SpeedDialAction[]",
+      "required": true,
+      "description": "{ id, icon, label, intent?, disabled? }"
+    }
+  ],
+  "events": [
+    {
+      "name": "onAction",
+      "detail": "MenuActionDetail",
+      "description": "Action selected — { id }"
+    },
+    {
+      "name": "onChange",
+      "detail": "{ open: boolean }",
+      "description": "Open/close state changed"
+    }
+  ]
+}

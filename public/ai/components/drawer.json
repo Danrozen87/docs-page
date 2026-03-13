@@ -1,0 +1,90 @@
+{
+  "id": "drawer",
+  "href": "/docs/components/drawer",
+  "exportHref": "/ai/components/drawer.json",
+  "title": "Drawer",
+  "description": "Slide-in panel from screen edge. Useful for navigation, settings, or detail views.",
+  "category": "Overlays",
+  "importName": "Drawer",
+  "parts": [
+    "base",
+    "panel",
+    "header",
+    "body",
+    "footer"
+  ],
+  "props": [
+    {
+      "name": "open",
+      "type": "boolean",
+      "default": "false",
+      "description": "Declarative open/close control"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": true,
+      "description": "Drawer heading"
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "Subtitle text below the heading"
+    },
+    {
+      "name": "side",
+      "type": "'left' | 'right' | 'top' | 'bottom'",
+      "default": "'right'",
+      "description": "Edge the drawer slides in from"
+    },
+    {
+      "name": "shape",
+      "type": "'sharp' | 'rounded' | 'pill'",
+      "default": "'rounded'",
+      "description": "Corner radius"
+    },
+    {
+      "name": "footer",
+      "type": "ReactNode",
+      "description": "Footer slot (action buttons)"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "description": "Body content"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "events": [
+    {
+      "name": "onClose",
+      "detail": "CloseDetail",
+      "description": "Closed via backdrop, Escape, or close button"
+    }
+  ],
+  "notes": [
+    "Supports both declarative (open prop) and imperative (ref.open() / ref.close()) control.",
+    "Closes automatically on backdrop click, Escape key, or close button. Listen to onClose to sync your state.",
+    "Animations respect prefers-reduced-motion. Enter: 400ms slide, Exit: 250ms slide."
+  ]
+}

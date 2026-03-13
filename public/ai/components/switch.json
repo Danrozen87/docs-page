@@ -1,0 +1,128 @@
+{
+  "id": "switch",
+  "href": "/docs/components/switch",
+  "exportHref": "/ai/components/switch.json",
+  "title": "Switch",
+  "description": "Toggle between on and off states. Unlike Checkbox, checked is a boolean.",
+  "category": "Form Inputs",
+  "importName": "Switch",
+  "shapes": [
+    "sharp",
+    "rounded",
+    "pill"
+  ],
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "description": "Switch label text"
+    },
+    {
+      "name": "checked",
+      "type": "boolean",
+      "default": "false",
+      "description": "On/off state (boolean)"
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "Description text below label"
+    },
+    {
+      "name": "shape",
+      "type": "'sharp' | 'rounded' | 'pill'",
+      "default": "'pill'",
+      "description": "Track border radius"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": "false",
+      "description": "Disabled state"
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "default": "false",
+      "description": "Required field"
+    },
+    {
+      "name": "helperText",
+      "type": "string",
+      "description": "Hint text below switch"
+    },
+    {
+      "name": "error",
+      "type": "string",
+      "description": "Error message (shows error state)"
+    },
+    {
+      "name": "unlabeled",
+      "type": "boolean",
+      "default": "false",
+      "description": "Hide visible label (label still required for ARIA)"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "events": [
+    {
+      "name": "onInput",
+      "detail": "CheckedDetail",
+      "description": "Fires immediately on toggle — { checked: boolean }"
+    },
+    {
+      "name": "onChange",
+      "detail": "CheckedDetail",
+      "description": "Fires on toggle — { checked: boolean }"
+    },
+    {
+      "name": "onFocus",
+      "detail": "FocusDetail",
+      "description": "Switch gains focus"
+    },
+    {
+      "name": "onBlur",
+      "detail": "FocusDetail",
+      "description": "Switch loses focus"
+    },
+    {
+      "name": "onKeydown",
+      "detail": "KeyboardDetail",
+      "description": "Key pressed while focused"
+    },
+    {
+      "name": "onKeyup",
+      "detail": "KeyboardDetail",
+      "description": "Key released while focused"
+    }
+  ],
+  "notes": [
+    "Unlike Checkbox, Switch checked is a BOOLEAN.",
+    "Supports three shapes: sharp (square track), rounded, and pill (default).",
+    "Thumb slides with a CSS transition — WASM handles initial render, JS handles toggle animation."
+  ]
+}

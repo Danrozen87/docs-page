@@ -1,0 +1,88 @@
+{
+  "id": "profile-menu",
+  "href": "/docs/components/profile-menu",
+  "exportHref": "/ai/components/profile-menu.json",
+  "title": "Profile Menu",
+  "description": "Avatar-triggered dropdown menu for user account actions.",
+  "category": "Navigation",
+  "importName": "ProfileMenu",
+  "shapes": [
+    "circle",
+    "rounded"
+  ],
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "description": "Accessible label"
+    },
+    {
+      "name": "image",
+      "type": "string",
+      "description": "Avatar image URL"
+    },
+    {
+      "name": "initials",
+      "type": "string",
+      "description": "Initials when no image"
+    },
+    {
+      "name": "shape",
+      "type": "'circle' | 'rounded'",
+      "default": "'circle'",
+      "description": "Avatar shape"
+    },
+    {
+      "name": "width",
+      "type": "'auto' | 'sm' | 'md' | 'lg'",
+      "description": "Menu panel width"
+    },
+    {
+      "name": "entries",
+      "type": "MenuEntry[]",
+      "required": true,
+      "description": "{ type, id, label, icon?, shortcut?, danger?, disabled? }"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": "false",
+      "description": "Disabled state"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "events": [
+    {
+      "name": "onAction",
+      "detail": "MenuActionDetail",
+      "description": "Item selected — { id, label? }"
+    }
+  ],
+  "notes": [
+    "Ref exposes open() and close() methods."
+  ]
+}

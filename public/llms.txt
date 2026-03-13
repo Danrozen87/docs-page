@@ -1,0 +1,82 @@
+# Collet Docs
+
+Collet is a zero-hydration UI component library with 49 accessible components compiled to WebAssembly and delivered as Custom Elements.
+
+Version: 0.2.2
+Repository: https://github.com/Danrozen87/collet
+Machine-readable JSON index: /ai/collet-docs.json
+
+Guides:
+- /docs/introduction — Introduction: Collet is a zero-hydration web UI component library with 49 accessible components compiled to WebAssembly and delivered as Custom Elements.
+- /docs/installation — Installation: Install @colletdev/core and the wrapper package for your framework.
+- /docs/usage — Usage: Render first, initialize Collet lazily, and understand startup, selective registration, and runtime loading behavior.
+- /docs/seam — SEAM Demo: Repo-local proof of concept for ambient session, file, and task-triggered context pings tied to real Collet docs invariants.
+- /docs/messages — Messages: Understand timeline-oriented message composition with Message Bubble, Message Group, Message Part, Activity Group, and Code Block.
+- /docs/conventions — Conventions: Shared vocabulary and authoring conventions for readable Collet code.
+- /docs/migrating-from-shadcn-ui — Migrating from shadcn/ui: Map shadcn/ui and underlying Radix patterns to Collet’s typed component layer, tokens, and lower-context workflow.
+- /docs/theming — Theming: Theme Collet with CSS custom properties, dark-mode tokens, and ::part() selectors.
+
+Components by category:
+## Layout
+- /docs/components/card — Card: Surface container with header, body, and footer slots. Renders as <article> in Shadow DOM.
+- /docs/components/text — Text: Semantic typography primitive with role-based sizing, alignment, color, truncation, and line clamping. Renders the correct HTML element via WASM.
+- /docs/components/sidebar — Sidebar: Persistent navigation with responsive drawer. Supports groups, icons, active states, and collapse.
+- /docs/components/collapsible — Collapsible: Show/hide content with an animated toggle trigger.
+- /docs/components/avatar — Avatar: User or entity representation with image or initials fallback.
+- /docs/components/scrollbar — Scrollbar: Custom styled scrollable container with visible scrollbar tracks.
+- /docs/components/carousel — Carousel: Swipeable slide gallery with indicators and navigation arrows.
+
+## Actions
+- /docs/components/button — Button: Trigger actions with accessible, styled buttons. Supports text, icon-only, icon+text, toggle, and link modes.
+- /docs/components/badge — Badge: Compact label for status, counts, or categories. Supports text, dot, and dismissible variants.
+- /docs/components/toggle-group — Toggle Group: Single or multi-select button group. Useful for alignment, view modes, or formatting controls.
+- /docs/components/split-button — Split Button: Primary action with dropdown alternatives. The main button performs the default action; the chevron opens a secondary menu.
+- /docs/components/fab — FAB: Floating Action Button for primary mobile actions. Supports icon-only and extended (icon + label) modes.
+- /docs/components/speed-dial — Speed Dial: FAB with radiating action menu. Actions fan out in a direction with staggered animation and optional backdrop.
+
+## Form Inputs
+- /docs/components/text-input — Text Input: Single-line and multiline text entry with built-in validation, icons, clearable, and password toggle.
+- /docs/components/select — Select: Dropdown selection from a list of options. Supports single/multi mode and option groups.
+- /docs/components/autocomplete — Autocomplete: Combobox with built-in fuzzy filtering. Supports single/multi select with chips.
+- /docs/components/checkbox — Checkbox: Binary or tri-state selection control. Supports checked, unchecked, and indeterminate states.
+- /docs/components/switch — Switch: Toggle between on and off states. Unlike Checkbox, checked is a boolean.
+- /docs/components/radio-group — Radio Group: Single selection from a set of options. Uses fieldset/legend for proper semantics.
+- /docs/components/slider — Slider: Numeric value selection along a range.
+- /docs/components/chat-input — Chat Input: Multi-line text area optimized for chat message composition. Auto-grows with content.
+- /docs/components/date-picker — Date Picker: Calendar-based date input with keyboard navigation and locale support.
+- /docs/components/search-bar — Search Bar: Search input with clear button, keyboard shortcut hint, and optional shimmer animation.
+- /docs/components/file-upload — File Upload: File selection with drag-and-drop zone, preview thumbnails, and validation.
+
+## Navigation
+- /docs/components/tabs — Tabs: Organize content into switchable panels. Supports underline, enclosed, and pill styles.
+- /docs/components/accordion — Accordion: Expandable content sections. Supports single or multiple expanded panels.
+- /docs/components/breadcrumb — Breadcrumb: Hierarchical navigation trail showing the current page location.
+- /docs/components/menu — Menu: Action list triggered by a button. Supports icons, shortcuts, separators, and danger items.
+- /docs/components/pagination — Pagination: Navigate between pages of content.
+- /docs/components/table — Table: Structured data display with sorting, selection, pagination, row hover, and striping.
+- /docs/components/listbox — Listbox: Scrollable selectable option list with keyboard navigation.
+- /docs/components/stepper — Stepper: Multi-step progress indicator with status per step. Supports horizontal and vertical layout.
+- /docs/components/profile-menu — Profile Menu: Avatar-triggered dropdown menu for user account actions.
+
+## Feedback
+- /docs/components/alert — Alert: Contextual feedback messages for user actions. Supports icons, dismiss, and action buttons.
+- /docs/components/toast — Toast: Temporary notification messages that auto-dismiss.
+- /docs/components/progress — Progress: Visual indicator of completion percentage.
+- /docs/components/spinner — Spinner: Loading indicator for async operations.
+- /docs/components/skeleton — Skeleton: Placeholder shapes while content loads. Supports text, circle, and rectangular variants.
+- /docs/components/thinking — Thinking: Animated thinking/loading indicator with shimmer effect. Designed for AI chat interfaces.
+
+## Overlays
+- /docs/components/dialog — Dialog: Modal overlay for focused interactions. Traps focus, closes on Escape or backdrop click.
+- /docs/components/drawer — Drawer: Slide-in panel from screen edge. Useful for navigation, settings, or detail views.
+- /docs/components/popover — Popover: Floating content anchored to a trigger element.
+- /docs/components/tooltip — Tooltip: Contextual information on hover or focus. Appears above the trigger element.
+- /docs/components/backdrop — Backdrop: Overlay layer for modals and drawers with tint, blur, and click-to-close support.
+
+## Data Display
+- /docs/components/message-bubble — Message Bubble: Chat message container with sender alignment, sender metadata, and timestamp.
+- /docs/components/message-group — Message Group: Grouped sequence of message parts — text, code blocks, tool calls, and thinking indicators.
+- /docs/components/message-part — Message Part: Standalone typed message segment with markdown, code blocks, tool activity, thinking states, errors, and optional streaming.
+- /docs/components/activity-group — Activity Group: Grouped activity feed with expandable entries and status indicators.
+- /docs/components/code-block — Code Block: Display syntax-highlighted code with optional filename chrome, line numbers, traffic lights, and inline copy.
+

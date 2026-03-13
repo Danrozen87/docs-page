@@ -1,0 +1,108 @@
+{
+  "id": "slider",
+  "href": "/docs/components/slider",
+  "exportHref": "/ai/components/slider.json",
+  "title": "Slider",
+  "description": "Numeric value selection along a range.",
+  "category": "Form Inputs",
+  "importName": "Slider",
+  "shapes": [
+    "sharp",
+    "rounded",
+    "pill"
+  ],
+  "intents": [
+    "neutral",
+    "primary",
+    "info",
+    "success",
+    "warning",
+    "danger"
+  ],
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "description": "Slider label"
+    },
+    {
+      "name": "min",
+      "type": "number",
+      "default": "0",
+      "description": "Minimum value"
+    },
+    {
+      "name": "max",
+      "type": "number",
+      "default": "100",
+      "description": "Maximum value"
+    },
+    {
+      "name": "step",
+      "type": "number",
+      "default": "1",
+      "description": "Step increment"
+    },
+    {
+      "name": "value",
+      "type": "number",
+      "default": "50",
+      "description": "Current value"
+    },
+    {
+      "name": "showValue",
+      "type": "boolean",
+      "default": "false",
+      "description": "Display current value"
+    },
+    {
+      "name": "orientation",
+      "type": "'horizontal' | 'vertical'",
+      "default": "'horizontal'",
+      "description": "Slider orientation"
+    },
+    {
+      "name": "intent",
+      "type": "'neutral' | 'primary' | 'info' | 'success' | 'warning' | 'danger'",
+      "default": "'primary'",
+      "description": "Track fill color"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "events": [
+    {
+      "name": "onInput",
+      "detail": "SliderDetail",
+      "description": "Fires continuously while dragging — { value: number }"
+    },
+    {
+      "name": "onChange",
+      "detail": "SliderDetail",
+      "description": "Fires on release — { value: number }"
+    }
+  ]
+}

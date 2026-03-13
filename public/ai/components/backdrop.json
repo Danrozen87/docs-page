@@ -1,0 +1,33 @@
+{
+  "id": "backdrop",
+  "href": "/docs/components/backdrop",
+  "exportHref": "/ai/components/backdrop.json",
+  "title": "Backdrop",
+  "description": "Overlay layer for modals and drawers with tint, blur, and click-to-close support.",
+  "category": "Overlays",
+  "importName": "Backdrop",
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "tint",
+      "type": "string",
+      "description": "Background color (CSS value)"
+    },
+    {
+      "name": "blur",
+      "type": "string",
+      "description": "Backdrop blur amount (CSS value)"
+    },
+    {
+      "name": "dismissible",
+      "type": "boolean",
+      "default": "false",
+      "description": "Close on click"
+    }
+  ],
+  "notes": [
+    "Used internally by Dialog and Drawer. Can be used standalone for custom overlays."
+  ]
+}

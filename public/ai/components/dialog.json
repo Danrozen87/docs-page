@@ -1,0 +1,73 @@
+{
+  "id": "dialog",
+  "href": "/docs/components/dialog",
+  "exportHref": "/ai/components/dialog.json",
+  "title": "Dialog",
+  "description": "Modal overlay for focused interactions. Traps focus, closes on Escape or backdrop click.",
+  "category": "Overlays",
+  "importName": "Dialog",
+  "parts": [
+    "base",
+    "panel",
+    "header",
+    "body",
+    "footer"
+  ],
+  "props": [
+    {
+      "name": "title",
+      "type": "string",
+      "required": true,
+      "description": "Dialog heading"
+    },
+    {
+      "name": "variant",
+      "type": "'default' | 'alert'",
+      "default": "'default'",
+      "description": "Dialog type"
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "Subtitle text"
+    },
+    {
+      "name": "footer",
+      "type": "ReactNode",
+      "description": "Footer slot (action buttons)"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "description": "Body content"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "events": [
+    {
+      "name": "onClose",
+      "detail": "CloseDetail",
+      "description": "Closed — { reason: \"escape\" | \"backdrop\" | \"close-button\" }"
+    }
+  ]
+}

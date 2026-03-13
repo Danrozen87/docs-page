@@ -1,0 +1,116 @@
+{
+  "$schema": "./graph.schema.json",
+  "seamVersion": "0.1.0",
+  "nodes": [
+    {
+      "id": "collet-init-constraint",
+      "title": "Collet Init Strategy",
+      "type": "constraint",
+      "authority": "canonical",
+      "summary": "Render the app first, then call init({ lazy: true }) so Collet can auto-detect the initial route and keep WASM off the blocking path.",
+      "payload": "This repo no longer initializes Collet before React mounts. The mounted DOM is the source for initial-route auto-detection, and the lazy init keeps startup non-blocking.",
+      "watchFiles": [
+        "src/main.tsx",
+        "src/pages/docs/UsagePage.tsx",
+        "src/pages/LandingPage.tsx"
+      ],
+      "taskKeywords": ["init", "initialize", "startup", "boot", "lazy", "mount", "main.tsx"]
+    },
+    {
+      "id": "wasm-preload-constraint",
+      "title": "WASM Preload Disabled",
+      "type": "constraint",
+      "authority": "canonical",
+      "summary": "Keep Collet WASM preload disabled in vite.config.ts unless profiling proves eager preload is worth the critical-path cost.",
+      "payload": "This docs app uses colletPlugin({ preload: false, prerender: true }) because preload: true undercuts the lazy-init startup strategy and drags wasm_api_bg.wasm into the initial network path.",
+      "watchFiles": [
+        "vite.config.ts",
+        "src/main.tsx",
+        "src/pages/docs/UsagePage.tsx"
+      ],
+      "taskKeywords": ["wasm", "preload", "vite", "performance", "startup", "bundle"]
+    },
+    {
+      "id": "docs-version-source-of-truth",
+      "title": "Docs Version Source of Truth",
+      "type": "definition",
+      "authority": "canonical",
+      "summary": "src/docs/registry.ts owns the published Collet docs version string, which propagates into llms.txt, JSON exports, and UI badges.",
+      "payload": "When the Collet packages are bumped, update COLLET_VERSION in src/docs/registry.ts and regenerate the machine-readable docs outputs. Do not patch generated exports by hand.",
+      "watchFiles": [
+        "src/docs/registry.ts",
+        "public/ai/collet-docs.json",
+        "public/llms.txt",
+        "src/components/DocsHeader.tsx"
+      ],
+      "taskKeywords": ["version", "bump", "release", "registry", "llms", "docs metadata"]
+    },
+    {
+      "id": "docs-exports-procedure",
+      "title": "Docs Validation Procedure",
+      "type": "procedure",
+      "authority": "canonical",
+      "summary": "After docs or metadata edits, run npm run docs:exports and npm run typecheck before considering the change complete.",
+      "payload": "The generated AI docs under public/ai/ and public/llms.txt are build artifacts. Update the source files first, then regenerate exports, then typecheck. Build is the final confidence pass for larger changes.",
+      "watchFiles": [
+        "src/pages/docs/**",
+        "src/pages/docs/components/**",
+        "src/docs/**",
+        "public/ai/**",
+        "public/llms.txt",
+        "scripts/generate-doc-exports.mjs"
+      ],
+      "taskKeywords": ["docs", "regenerate", "exports", "typecheck", "publish", "json", "llms"]
+    },
+    {
+      "id": "message-api-warning",
+      "title": "Message API Naming Mismatch",
+      "type": "warning",
+      "authority": "canonical",
+      "summary": "Grouped MessageGroupPart data uses snake_case keys, while standalone MessagePart props use camelCase names.",
+      "payload": "This is an intentional docs warning because it is easy to drift here: tool_name vs toolName, thinking_label vs thinkingLabel, tool_status vs toolStatus. Message docs should call this out explicitly.",
+      "watchFiles": [
+        "src/pages/docs/MessagesPage.tsx",
+        "src/pages/docs/components/componentData.ts",
+        "src/docs/messagesContent.ts",
+        "src/pages/docs/components/ComponentPreviews.tsx"
+      ],
+      "taskKeywords": ["message", "messagepart", "message group", "messages docs", "tool_name", "toolName"]
+    },
+    {
+      "id": "messages-content-example",
+      "title": "Shared Message Examples",
+      "type": "example",
+      "authority": "illustrative",
+      "summary": "Message examples and workflow snippets belong in src/docs/messagesContent.ts so the guide page and component previews stay aligned.",
+      "payload": "When the message API changes, update the shared message example source first. MessagesPage.tsx and ComponentPreviews.tsx should consume those exports instead of maintaining inline copies.",
+      "watchFiles": [
+        "src/docs/messagesContent.ts",
+        "src/pages/docs/MessagesPage.tsx",
+        "src/pages/docs/components/ComponentPreviews.tsx"
+      ],
+      "taskKeywords": ["message example", "docs refactor", "messages content", "shared example"]
+    },
+    {
+      "id": "generated-files-context",
+      "title": "Generated Docs Artifacts",
+      "type": "context",
+      "authority": "canonical",
+      "summary": "public/ai/*.json and public/llms.txt are generated outputs. They should reflect source changes, not become the source of truth.",
+      "payload": "Generated docs exports are meant for AI consumption and publishing. Human edits belong in source files under src/, scripts/, and local guidance docs. The graph should remind the editor when they are touching generated surfaces.",
+      "watchFiles": [
+        "public/ai/**",
+        "public/llms.txt",
+        "scripts/generate-doc-exports.mjs"
+      ],
+      "taskKeywords": ["generated", "artifact", "ai export", "json output", "llms"]
+    }
+  ],
+  "edges": [
+    {
+      "from": "messages-content-example",
+      "to": "message-api-warning",
+      "rel": "illustrates"
+    }
+  ]
+}

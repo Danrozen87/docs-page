@@ -1,0 +1,132 @@
+{
+  "id": "button",
+  "href": "/docs/components/button",
+  "exportHref": "/ai/components/button.json",
+  "title": "Button",
+  "description": "Trigger actions with accessible, styled buttons. Supports text, icon-only, icon+text, toggle, and link modes.",
+  "category": "Actions",
+  "importName": "Button",
+  "variants": [
+    "filled",
+    "ghost",
+    "outline",
+    "underline",
+    "side-indicator"
+  ],
+  "shapes": [
+    "sharp",
+    "rounded",
+    "pill"
+  ],
+  "intents": [
+    "neutral",
+    "primary",
+    "info",
+    "success",
+    "warning",
+    "danger"
+  ],
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "description": "Button text content"
+    },
+    {
+      "name": "variant",
+      "type": "'filled' | 'ghost' | 'outline' | 'underline' | 'side-indicator'",
+      "default": "'filled'",
+      "description": "Visual treatment"
+    },
+    {
+      "name": "intent",
+      "type": "'neutral' | 'primary' | 'info' | 'success' | 'warning' | 'danger'",
+      "default": "'neutral'",
+      "description": "Semantic color"
+    },
+    {
+      "name": "shape",
+      "type": "'sharp' | 'rounded' | 'pill'",
+      "default": "'rounded'",
+      "description": "Border radius"
+    },
+    {
+      "name": "iconLeading",
+      "type": "string",
+      "description": "Lucide icon name before label"
+    },
+    {
+      "name": "iconTrailing",
+      "type": "string",
+      "description": "Lucide icon name after label"
+    },
+    {
+      "name": "iconOnly",
+      "type": "string",
+      "description": "Icon-only mode (requires ariaLabel)"
+    },
+    {
+      "name": "ariaLabel",
+      "type": "string",
+      "description": "Accessible label (required for iconOnly)"
+    },
+    {
+      "name": "kind",
+      "type": "'button' | 'submit' | 'toggle' | 'link'",
+      "default": "'button'",
+      "description": "Button type"
+    },
+    {
+      "name": "pressed",
+      "type": "boolean",
+      "description": "Toggle state (for kind=\"toggle\")"
+    },
+    {
+      "name": "href",
+      "type": "string",
+      "description": "URL for kind=\"link\""
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": "false",
+      "description": "Disabled state"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "events": [
+    {
+      "name": "onClick",
+      "detail": "ClickDetail",
+      "description": "Fires on click"
+    }
+  ],
+  "notes": [
+    "Icon-only buttons require ariaLabel for accessibility.",
+    "Icon names use Lucide icon set in kebab-case.",
+    "size=\"sm\" icon-only = 32×32px, size=\"md\" = 36×36px."
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "id": "popover",
+  "href": "/docs/components/popover",
+  "exportHref": "/ai/components/popover.json",
+  "title": "Popover",
+  "description": "Floating content anchored to a trigger element.",
+  "category": "Overlays",
+  "importName": "Popover",
+  "parts": [
+    "trigger",
+    "panel"
+  ],
+  "props": [
+    {
+      "name": "triggerLabel",
+      "type": "string",
+      "required": true,
+      "description": "Trigger button label"
+    },
+    {
+      "name": "placement",
+      "type": "'top' | 'bottom' | 'left' | 'right'",
+      "default": "'bottom'",
+      "description": "Panel position"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "description": "Panel content"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ]
+}

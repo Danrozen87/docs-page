@@ -1,0 +1,41 @@
+{
+  "id": "spinner",
+  "href": "/docs/components/spinner",
+  "exportHref": "/ai/components/spinner.json",
+  "title": "Spinner",
+  "description": "Loading indicator for async operations.",
+  "category": "Feedback",
+  "importName": "Spinner",
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "description": "Accessible label (e.g. \"Loading...\")"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ]
+}

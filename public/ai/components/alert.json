@@ -1,0 +1,95 @@
+{
+  "id": "alert",
+  "href": "/docs/components/alert",
+  "exportHref": "/ai/components/alert.json",
+  "title": "Alert",
+  "description": "Contextual feedback messages for user actions. Supports icons, dismiss, and action buttons.",
+  "category": "Feedback",
+  "importName": "Alert",
+  "variants": [
+    "subtle",
+    "filled",
+    "outline"
+  ],
+  "intents": [
+    "neutral",
+    "info",
+    "success",
+    "warning",
+    "danger"
+  ],
+  "parts": [
+    "base",
+    "content"
+  ],
+  "props": [
+    {
+      "name": "title",
+      "type": "string",
+      "required": true,
+      "description": "Alert heading"
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "Alert body text"
+    },
+    {
+      "name": "variant",
+      "type": "'subtle' | 'filled' | 'outline'",
+      "default": "'subtle'",
+      "description": "Visual treatment"
+    },
+    {
+      "name": "intent",
+      "type": "'neutral' | 'info' | 'success' | 'warning' | 'danger'",
+      "default": "'info'",
+      "description": "Semantic color"
+    },
+    {
+      "name": "showIcon",
+      "type": "boolean",
+      "default": "true",
+      "description": "Show intent icon"
+    },
+    {
+      "name": "dismissible",
+      "type": "boolean",
+      "default": "false",
+      "description": "Show dismiss button"
+    },
+    {
+      "name": "actions",
+      "type": "ReactNode",
+      "description": "Action slot (buttons)"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "events": [
+    {
+      "name": "onDismiss",
+      "detail": "DismissDetail",
+      "description": "Dismissed — { reason }"
+    }
+  ]
+}

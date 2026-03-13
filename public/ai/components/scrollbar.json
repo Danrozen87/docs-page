@@ -1,0 +1,79 @@
+{
+  "id": "scrollbar",
+  "href": "/docs/components/scrollbar",
+  "exportHref": "/ai/components/scrollbar.json",
+  "title": "Scrollbar",
+  "description": "Custom styled scrollable container with visible scrollbar tracks.",
+  "category": "Layout",
+  "importName": "Scrollbar",
+  "shapes": [
+    "sharp",
+    "rounded",
+    "pill"
+  ],
+  "parts": [
+    "base",
+    "track",
+    "thumb",
+    "track-x",
+    "track-y",
+    "thumb-x",
+    "thumb-y"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "description": "Accessible label for scrollable region"
+    },
+    {
+      "name": "height",
+      "type": "string",
+      "description": "Tailwind height class (e.g. \"h-48\")"
+    },
+    {
+      "name": "track",
+      "type": "'with-track' | 'floating'",
+      "default": "'floating'",
+      "description": "Track style"
+    },
+    {
+      "name": "axis",
+      "type": "'vertical' | 'horizontal' | 'both'",
+      "default": "'vertical'",
+      "description": "Scroll direction"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "description": "Scrollable content"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "notes": [
+    "The height prop accepts a Tailwind class (e.g. \"h-48\") applied inside Shadow DOM.",
+    "CSS-only fallback: thumb visible at 20% opacity before JS initializes.",
+    "JS-enhanced: precise thumb sizing, drag support, and auto-hide on idle."
+  ]
+}

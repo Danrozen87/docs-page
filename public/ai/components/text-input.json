@@ -1,0 +1,162 @@
+{
+  "id": "text-input",
+  "href": "/docs/components/text-input",
+  "exportHref": "/ai/components/text-input.json",
+  "title": "Text Input",
+  "description": "Single-line and multiline text entry with built-in validation, icons, clearable, and password toggle.",
+  "category": "Form Inputs",
+  "importName": "TextInput",
+  "variants": [
+    "outline",
+    "filled",
+    "ghost"
+  ],
+  "shapes": [
+    "sharp",
+    "rounded",
+    "pill"
+  ],
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "description": "Input label (always visible)"
+    },
+    {
+      "name": "kind",
+      "type": "'text' | 'email' | 'password' | 'number' | 'tel' | 'url' | 'search' | 'multiline'",
+      "default": "'text'",
+      "description": "Input type"
+    },
+    {
+      "name": "variant",
+      "type": "'outline' | 'filled' | 'ghost'",
+      "default": "'outline'",
+      "description": "Visual treatment"
+    },
+    {
+      "name": "shape",
+      "type": "'sharp' | 'rounded' | 'pill'",
+      "default": "'rounded'",
+      "description": "Border radius"
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "description": "Placeholder text"
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "description": "Controlled value"
+    },
+    {
+      "name": "helperText",
+      "type": "string",
+      "description": "Hint text below input"
+    },
+    {
+      "name": "error",
+      "type": "string",
+      "description": "Error message (shows error state)"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": "false",
+      "description": "Disabled state"
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "default": "false",
+      "description": "Required field"
+    },
+    {
+      "name": "clearable",
+      "type": "boolean",
+      "default": "false",
+      "description": "Show clear button when has value"
+    },
+    {
+      "name": "prefixIcon",
+      "type": "string",
+      "description": "Icon before input text"
+    },
+    {
+      "name": "suffixIcon",
+      "type": "string",
+      "description": "Icon after input text"
+    },
+    {
+      "name": "passwordToggle",
+      "type": "boolean",
+      "default": "false",
+      "description": "Show/hide password toggle (for kind=\"password\")"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "Form field name"
+    },
+    {
+      "name": "maxLength",
+      "type": "number",
+      "description": "Maximum character count"
+    },
+    {
+      "name": "rows",
+      "type": "number",
+      "default": "3",
+      "description": "Visible rows (for kind=\"multiline\")"
+    },
+    {
+      "name": "autoGrow",
+      "type": "boolean",
+      "default": "false",
+      "description": "Auto-grow height (for kind=\"multiline\")"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "events": [
+    {
+      "name": "onInput",
+      "detail": "InputDetail",
+      "description": "Fires on each keystroke — { value: string }"
+    },
+    {
+      "name": "onChange",
+      "detail": "InputDetail",
+      "description": "Fires on blur — { value: string }"
+    }
+  ],
+  "notes": [
+    "Filled variant uses --color-secondary for background, NOT --color-surface.",
+    "Use kind=\"multiline\" for textarea behavior.",
+    "Controlled pattern: value + onInput handler."
+  ]
+}

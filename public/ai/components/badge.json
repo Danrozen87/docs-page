@@ -1,0 +1,85 @@
+{
+  "id": "badge",
+  "href": "/docs/components/badge",
+  "exportHref": "/ai/components/badge.json",
+  "title": "Badge",
+  "description": "Compact label for status, counts, or categories. Supports text, dot, and dismissible variants.",
+  "category": "Actions",
+  "importName": "Badge",
+  "variants": [
+    "filled",
+    "outline",
+    "ghost"
+  ],
+  "shapes": [
+    "rounded",
+    "pill"
+  ],
+  "intents": [
+    "neutral",
+    "primary",
+    "info",
+    "success",
+    "warning",
+    "danger"
+  ],
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "description": "Badge text"
+    },
+    {
+      "name": "variant",
+      "type": "'filled' | 'outline' | 'ghost'",
+      "default": "'filled'",
+      "description": "Visual treatment"
+    },
+    {
+      "name": "intent",
+      "type": "'neutral' | 'primary' | 'info' | 'success' | 'warning' | 'danger'",
+      "default": "'neutral'",
+      "description": "Semantic color"
+    },
+    {
+      "name": "shape",
+      "type": "'rounded' | 'pill'",
+      "default": "'pill'",
+      "description": "Border radius"
+    },
+    {
+      "name": "dot",
+      "type": "boolean",
+      "description": "Show status dot instead of text"
+    },
+    {
+      "name": "dismissible",
+      "type": "boolean",
+      "description": "Show dismiss button"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ]
+}

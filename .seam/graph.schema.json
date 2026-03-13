@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://docs-page.local/.seam/graph.schema.json",
+  "title": "SEAM Graph",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["seamVersion", "nodes", "edges"],
+  "properties": {
+    "seamVersion": {
+      "type": "string",
+      "description": "Schema version for the SEAM graph file."
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/node"
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/edge"
+      },
+      "description": "Explicit semantic relationships between nodes."
+    }
+  },
+  "$defs": {
+    "nodeType": {
+      "type": "string",
+      "enum": ["constraint", "definition", "procedure", "example", "warning", "context"]
+    },
+    "authority": {
+      "type": "string",
+      "enum": ["canonical", "illustrative", "tentative", "legacy"]
+    },
+    "edgeRel": {
+      "type": "string",
+      "enum": ["illustrates", "supersedes", "depends-on", "contradicts", "defines"]
+    },
+    "node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "type", "authority", "summary", "payload", "watchFiles"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$",
+          "description": "Stable node identifier used across the graph and code attachments."
+        },
+        "title": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/$defs/nodeType"
+        },
+        "authority": {
+          "$ref": "#/$defs/authority"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "payload": {
+          "type": "string"
+        },
+        "watchFiles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Exact paths or /** directory globs that should trigger this node."
+        },
+        "taskKeywords": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Lightweight semantic keywords used to match task-oriented triggers."
+        }
+      }
+    },
+    "edge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["from", "to", "rel"],
+      "properties": {
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        },
+        "rel": {
+          "$ref": "#/$defs/edgeRel"
+        }
+      }
+    }
+  }
+}

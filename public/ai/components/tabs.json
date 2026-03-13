@@ -1,0 +1,75 @@
+{
+  "id": "tabs",
+  "href": "/docs/components/tabs",
+  "exportHref": "/ai/components/tabs.json",
+  "title": "Tabs",
+  "description": "Organize content into switchable panels. Supports underline, enclosed, and pill styles.",
+  "category": "Navigation",
+  "importName": "Tabs",
+  "variants": [
+    "underline",
+    "enclosed",
+    "pill"
+  ],
+  "parts": [
+    "base",
+    "tablist",
+    "panel"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "required": true,
+      "description": "Accessible tablist label"
+    },
+    {
+      "name": "variant",
+      "type": "'underline' | 'enclosed' | 'pill'",
+      "default": "'underline'",
+      "description": "Visual style"
+    },
+    {
+      "name": "defaultTab",
+      "type": "string",
+      "description": "Initially active tab value"
+    },
+    {
+      "name": "items",
+      "type": "TabItem[]",
+      "required": true,
+      "description": "{ value, label, content (HTML string) }"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "events": [
+    {
+      "name": "onChange",
+      "detail": "SelectDetail",
+      "description": "Tab changed — { value: string }"
+    }
+  ],
+  "notes": [
+    "Panel content is an HTML string, not JSX."
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "id": "file-upload",
+  "href": "/docs/components/file-upload",
+  "exportHref": "/ai/components/file-upload.json",
+  "title": "File Upload",
+  "description": "File selection with drag-and-drop zone, preview thumbnails, and validation.",
+  "category": "Form Inputs",
+  "importName": "FileUpload",
+  "variants": [
+    "outline",
+    "filled",
+    "subtle"
+  ],
+  "shapes": [
+    "sharp",
+    "rounded",
+    "pill"
+  ],
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "description": "Accessible label"
+    },
+    {
+      "name": "mode",
+      "type": "'inline' | 'overlay'",
+      "description": "Drop zone layout"
+    },
+    {
+      "name": "variant",
+      "type": "'outline' | 'filled' | 'subtle'",
+      "default": "'outline'",
+      "description": "Visual treatment"
+    },
+    {
+      "name": "shape",
+      "type": "'sharp' | 'rounded' | 'pill'",
+      "default": "'rounded'",
+      "description": "Border radius"
+    },
+    {
+      "name": "multiple",
+      "type": "boolean",
+      "default": "false",
+      "description": "Allow multiple files"
+    },
+    {
+      "name": "accept",
+      "type": "string",
+      "description": "Accepted file types (e.g. \"image/*,.pdf\")"
+    },
+    {
+      "name": "maxSize",
+      "type": "number",
+      "default": "0",
+      "description": "Max file size in bytes (0 = unlimited)"
+    },
+    {
+      "name": "heading",
+      "type": "string",
+      "description": "Drop zone heading text"
+    },
+    {
+      "name": "browseText",
+      "type": "string",
+      "description": "Browse button text"
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "description": "Hint text below drop zone"
+    },
+    {
+      "name": "preview",
+      "type": "boolean",
+      "default": "false",
+      "description": "Show file preview thumbnails"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": "false",
+      "description": "Disabled state"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "events": [
+    {
+      "name": "onChange",
+      "detail": "—",
+      "description": "Files selected or dropped"
+    }
+  ]
+}

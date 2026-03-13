@@ -1,0 +1,41 @@
+{
+  "id": "tooltip",
+  "href": "/docs/components/tooltip",
+  "exportHref": "/ai/components/tooltip.json",
+  "title": "Tooltip",
+  "description": "Contextual information on hover or focus. Appears above the trigger element.",
+  "category": "Overlays",
+  "importName": "Tooltip",
+  "parts": [
+    "base",
+    "content"
+  ],
+  "props": [
+    {
+      "name": "content",
+      "type": "string",
+      "required": true,
+      "description": "Tooltip text"
+    },
+    {
+      "name": "position",
+      "type": "'top' | 'bottom' | 'left' | 'right'",
+      "default": "'top'",
+      "description": "Tooltip position"
+    },
+    {
+      "name": "trigger",
+      "type": "ReactNode",
+      "description": "Trigger element"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "description": "Alias for trigger"
+    }
+  ],
+  "notes": [
+    "children and trigger are interchangeable — if both provided, trigger wins.",
+    "Accessible name comes from content prop."
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "id": "radio-group",
+  "href": "/docs/components/radio-group",
+  "exportHref": "/ai/components/radio-group.json",
+  "title": "Radio Group",
+  "description": "Single selection from a set of options. Uses fieldset/legend for proper semantics.",
+  "category": "Form Inputs",
+  "importName": "RadioGroup",
+  "parts": [
+    "base"
+  ],
+  "props": [
+    {
+      "name": "legend",
+      "type": "string",
+      "required": true,
+      "description": "Group legend text"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "required": true,
+      "description": "Form field name"
+    },
+    {
+      "name": "selected",
+      "type": "string",
+      "description": "Currently selected value"
+    },
+    {
+      "name": "options",
+      "type": "RadioOption[]",
+      "required": true,
+      "description": "{ value, label, description?, disabled? }"
+    },
+    {
+      "name": "size",
+      "type": "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+      "default": "'md'",
+      "description": "Component size"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "CSS class on host element"
+    },
+    {
+      "name": "style",
+      "type": "React.CSSProperties",
+      "description": "Inline styles on host element"
+    },
+    {
+      "name": "ref",
+      "type": "React.Ref<HTMLElement>",
+      "description": "Ref forwarded to Custom Element"
+    }
+  ],
+  "events": [
+    {
+      "name": "onChange",
+      "detail": "SelectDetail",
+      "description": "Fires on selection — { value: string }"
+    }
+  ]
+}
